@@ -18,6 +18,8 @@
 .productView__image {
   flex-grow: 1;
   position: relative;
+  /* background-position: right center; */
+  background-size: cover;
 }
 
 .productView__image img {
@@ -115,4 +117,19 @@
 .Product__option {
   width: 100%;
   padding: 10px;
+}
+
+@media screen and (max-width: 1366px) {
+  .productView__select {
+    width: 380px;
+  }
+  .productView__details {
+    left: 60px;
+  }
+  .productView__return {
+    left: 60px;
+  }
+  .productView__details p {
+    max-width: 320px;
+  }
 }

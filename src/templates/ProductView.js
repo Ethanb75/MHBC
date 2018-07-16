@@ -9,6 +9,8 @@ import VariantSelector from '../components/VariantSelector';
 
 import './ProductView.css';
 
+const mockProduct = 'https://cdn.shopify.com/s/files/1/0141/0855/7370/files/mockProduct.jpeg?2414997021602847072'
+
 export default class ProductView extends Component {
   state = {
     product: undefined
@@ -84,7 +86,8 @@ export default class ProductView extends Component {
     });
   }
   render() {
-    // console.log(this.props.working);
+
+
 
     if (this.state.product) {
       let variantImage = this.state.selectedVariantImage || this.state.product.images[0]
@@ -99,6 +102,7 @@ export default class ProductView extends Component {
           />
         );
       });
+
       return (
         <div className="productView">
           <div className="productView__select">
@@ -112,15 +116,15 @@ export default class ProductView extends Component {
             </div>
           </div>
 
-          <div className="productView__image">
+          <div className="productView__image" style={this.state.product.images.length ? { backgroundImage: `url(${variantImage.src && mockProduct})` } : { backgroundImage: `url(${mockProduct})` }}>
             <div className="productView__return">
               <Link to="/en/Catalog">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               </Link>
             </div>
 
             {/* need to get a mock photo that says 'photo soon' instead of 'null' */}
-            {this.state.product.images.length ? <img src={variantImage.src && 'https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'} alt={`${this.state.product.title} product shot`} /> : null}
+            {/* {this.state.product.images.length ? <img src={variantImage.src && mockProduct} alt={`${this.state.product.title} product shot`} /> : null} */}
             <div className="productView__details">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>
