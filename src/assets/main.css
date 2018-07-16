@@ -620,13 +620,15 @@ main {
   }
   .sideBar__cart {
     top: 0;
-    right: 100px;
+    right: 80px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  .sideBar__cart svg {
+    width: 25px;
+  }
   .sideBar__cart button {
     flex-direction: row-reverse;
     justify-content: center;
@@ -655,7 +657,8 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 20px
+    /* padding: 20px */
+    padding: 10px 0 0 10px;
   }
   .topBar__logo img {
     width: 40px;
@@ -719,13 +722,17 @@ main {
     justify-content: flex-end;
     height: 100%;
   }
+  
   .menu ul {
     margin: 0;
     width: 100%;
   }
   .menu ul:last-of-type {
-    margin-top: 20px;
+    margin-top: 60px;
     background: #0d0d0d;
+  }
+  .menu ul li {
+    margin: 20px;
   }
   .menu ul:last-of-type a {
     color: #F2CD5E;
@@ -774,6 +781,15 @@ main {
 }
 
 @media screen and (max-width: 380px) {
+  #indexHeader {
+    height: 100vh;
+  }
+  .title p {
+    margin-bottom: 20px;
+  }
+  .title h1 {
+    font-size: 5.378em;
+  }
   .essentials__item.intro h2, .culture__info h2, .designer__info h2, #catalog_caller h2, #caller h2 {
     font-size: 1.4em;
     letter-spacing: 0;
