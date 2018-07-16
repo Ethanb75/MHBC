@@ -92,6 +92,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   justify-content: center;
   align-items: center;
   transition: background-color .4s ease .2s;
+  z-index: 15;
 }
 
 .sideBar.catalog {

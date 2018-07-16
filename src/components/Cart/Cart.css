@@ -10,14 +10,15 @@
   background: white;
   display: flex;
   flex-direction: column;
-  transform: translateY(-100%);
+  transform: translateX(100%);
   transition: all .3s ease-out;
+  z-index: 10;
 }
 
 .cart.open {
   opacity: 1;
   pointer-events: all;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .cart__close {

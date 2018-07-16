@@ -605,11 +605,6 @@ main {
   .footer__links li {
     margin-right: 20px;
   }
-  #catalogMain {
-    flex-direction: column;
-    padding: 0;
-    padding-right: 60px;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -653,12 +648,13 @@ main {
     margin-top: 7.5px;
   }
   .topBar__logo {
-    z-index: 1;
+    z-index: 16;
     position: fixed;
     top: 0;
     left: 0;
     /* padding: 20px */
-    padding: 10px 0 0 10px;
+    padding: 10px 10px 0 10px;
+    height: 60px;
   }
   .topBar__logo img {
     width: 40px;
@@ -784,6 +780,9 @@ main {
   #indexHeader {
     height: 100vh;
   }
+}
+
+@media screen and (max-width: 360px) {
   .title p {
     margin-bottom: 20px;
   }
