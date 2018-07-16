@@ -701,8 +701,13 @@ main {
   #catalog_caller > div {
     margin-bottom: 40px;
   }
+  #designer img {
+    width: 100%;
+    height: initial;
+  }
   .designer__info {
     margin-right: 0;
+    margin-top: -10px;
   }
 }
 
