@@ -162,6 +162,7 @@
     bottom: -100px;
     width: 100%;
     text-align: center;
+    letter-spacing: -5px;
   }
   .catalogCategory {
     padding: 60px 20px 20px 20px;
