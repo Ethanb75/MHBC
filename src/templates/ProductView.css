@@ -179,6 +179,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .productView__image {
+    height: 120vh;
+  }
   .productView__select {
     padding: 0;
   }
