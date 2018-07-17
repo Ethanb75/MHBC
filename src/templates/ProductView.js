@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
 
 import Link from 'gatsby-link';
 
@@ -105,6 +105,13 @@ export default class ProductView extends Component {
 
       return (
         <div className="productView">
+          <Helmet
+            title={this.state.product.title}
+            meta={[
+              { name: 'description', content: `${this.state.product.description}` },
+              { name: 'keywords', content: 'Mile High Boys Club, MHBC, MHBC Fashion, fashion' },
+            ]}
+          />
           <div className="productView__select">
             {variantSelectors}
             <div>

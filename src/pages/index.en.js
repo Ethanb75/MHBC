@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 // components
 import Footer from '../components/Footer/Footer';
@@ -64,6 +65,13 @@ export default class IndexPage extends Component {
     console.log(this.props.working);
     return (
       <div className="pageWrapper">
+        <Helmet
+          title="Mile High Boys Club"
+          meta={[
+            { name: 'description', content: 'Mile High Boys Club official website and merch store.' },
+            { name: 'keywords', content: 'Mile High Boys Club, MHBC, MHBC Fashion, fashion' },
+          ]}
+        />
         <header id="indexHeader">
           <div className="title">
             <h1>MHBC</h1>
@@ -72,12 +80,12 @@ export default class IndexPage extends Component {
               motivation, determination, dedication, ambition and status. 🛫
             </p>
             <div>
-              <button>Catalog <span>&rarr;</span></button>
+              <Link to="/en/Catalog">Catalog <span>&rarr;</span></Link>
             </div>
           </div>
           <div className="featured">
             <span>featured</span>
-            <Link to="/catalog">Stylin Jacket <span>&rarr;</span></Link>
+            <Link to="/en/Catalog">Stylin Jacket <span>&rarr;</span></Link>
             <img src="https://cdn.shopify.com/s/files/1/0141/0855/7370/products/pre_launch_bold.jpg?v=1531414253" />
           </div>
           <div className="background">
@@ -100,7 +108,6 @@ export default class IndexPage extends Component {
               </div>
               <div className="essentials__detials">
                 <p className="fatCopy">Watch1</p>
-                {/* <Link to="/en/catalog">See item</Link> */}
               </div>
             </div>
             <div className="essentials__item">
@@ -109,7 +116,6 @@ export default class IndexPage extends Component {
               </div>
               <div className="essentials__detials">
                 <p className="fatCopy">Watch2</p>
-                {/* <Link to="/en/catalog">see item</Link> */}
               </div>
             </div>
             <div className="essentials__item">
@@ -118,7 +124,6 @@ export default class IndexPage extends Component {
               </div>
               <div className="essentials__detials">
                 <p className="fatCopy">Watch3</p>
-                {/* <Link to="/en/catalog">see item</Link> */}
               </div>
             </div>
           </div>

@@ -44,7 +44,7 @@ button {
 .title {
   /* margin-left: calc(var(--col) / 2); */
   margin-left: var(--col);
-  padding-top: calc(20px * 20);
+  padding-top: 38vh;
   position: relative;
   z-index: 1;
 }
@@ -68,7 +68,7 @@ button {
   margin-bottom: 80px;
 }
 
-.title button {
+.title button, .title a {
  background-color: #F2CD5E;
  border: none;
  padding: 20px 35px;
@@ -79,9 +79,12 @@ button {
  letter-spacing: .5px;
  position: relative;
  transition: all .2s ease-out;
+ display: inline-block;
+ color: hsla(0, 0%, 0%, .8);
+ text-decoration: none;
 }
 
-.title button::before {
+.title button::before, .title a::before {
   content: '';
   background-color: #F2CD5E1A;
   position: absolute;
@@ -93,18 +96,17 @@ button {
   transition: all .1s ease;
 }
 
-.title button > span {
+.title button > span, .title a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;
 }
 
-.title button:hover {
+.title button:hover, .title a:hover {
   transform: translateY(-4px);
-  /* color: #f3f3f3; */
 }
 
-.title button:hover::before {
+.title button:hover::before, .title a:hover::before {
   transform: translate3d(-10px, -10px, 0);
 }
 

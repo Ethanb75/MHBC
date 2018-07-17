@@ -133,13 +133,6 @@ class TemplateWrapper extends Component {
         messages={this.props.i18nMessages}
       >
         <div>
-          <Helmet
-            title="Gatsby Default Starter"
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          />
           <Header
             langs={langsMenu}
             checkout={this.state.checkout}

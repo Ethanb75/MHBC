@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 // import { Accordion, Form, Menu } from 'semantic-ui-react';
+import Helmet from 'react-helmet'
 
 
 import Products from '../components/Products';
@@ -74,6 +75,13 @@ export default class Catalog extends Component {
     const { filterIndex } = this.state;
     return (
       <div>
+        <Helmet
+          title="Mile High Boys Club | Catalog"
+          meta={[
+            { name: 'description', content: 'Mile High Boys Club official website and merch store. Browse our catalog' },
+            { name: 'keywords', content: 'Mile High Boys Club, MHBC, MHBC Fashion, fashion' },
+          ]}
+        />
         <header id="catalogHeader">
           <div>
             <div className="catalogHeader__imgWrap">
