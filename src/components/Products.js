@@ -21,7 +21,7 @@ export default class Products extends Component {
 
     return (
       <div className="Product-wrapper">
-        {this.props.products.length > 0 ?
+        {this.props.products.length === 0 ?
           <div className="Product-loading"><img src={loadingIcon} /></div> : products}
       </div>
     );
