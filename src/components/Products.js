@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 import Product from './Product/Product.js';
 
+import loadingIcon from '../assets/loading.svg'
+
 
 export default class Products extends Component {
   render() {
+    console.log(this.props.products);
     let products = this.props.products.map((product) => {
       return (
         <Product
@@ -18,7 +21,8 @@ export default class Products extends Component {
 
     return (
       <div className="Product-wrapper">
-        {products}
+        {this.props.products.length > 0 ?
+          <div className="Product-loading"><img src={loadingIcon} /></div> : products}
       </div>
     );
   }

@@ -34,7 +34,7 @@ export default class Cart extends Component {
           </ul>
         </div>
         <div className="cart__checkout">
-          <button onClick={this.openCheckout}>checkout</button>
+          <button onClick={this.openCheckout} disabled={cartItems.length === 0}>checkout</button>
         </div>
       </div>
     )

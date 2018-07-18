@@ -200,8 +200,13 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 .sideBar__cart button span {
   color: white;
   font-weight: 900;
-  /* display: none; */
   margin-top: 10px;
+  animation: newCartItem 1s ease forwards;
+}
+
+@keyframes newCartItem {
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 .sideBar__cart svg {

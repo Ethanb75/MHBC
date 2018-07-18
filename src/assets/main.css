@@ -8,7 +8,7 @@
 body, h5, h6 {
   line-height: 1.4;
   font-size: 14px;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif !important;
 }
 
 .noscroll {
@@ -263,7 +263,7 @@ main {
   margin-bottom: 0;
 }
 
-.essentials__item.intro button, .culture__info button, .designer__info button {
+.essentials__item.intro button, .culture__info button, .designer__info button, .essentials__item.intro a, .culture__info a, .designer__info a {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -275,10 +275,12 @@ main {
   font-weight: 900;
   font-size: .714em;
   letter-spacing: .5px;
+  text-decoration: none;
+  color: hsla(0, 0%, 0%, .8);
   transition: all .2s ease-out;
 }
 
-.essentials__item.intro button > span {
+.essentials__item.intro button > span, .essentials__item.intro a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;
@@ -337,7 +339,7 @@ main {
   display: flex;
 }
 
-.culture__info button > span, .designer__info button > span {
+.culture__info button > span, .designer__info button > span, .culture__info a > span, .designer__info a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;

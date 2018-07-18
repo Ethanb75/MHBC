@@ -100,7 +100,7 @@ export default class IndexPage extends Component {
             <div className="essentials__item intro">
               <em>the essentials</em>
               <h2>Threads to match your ambition</h2>
-              <button>Shop Featured<span>→</span></button>
+              <Link to="/en/Catalog">Shop Featured<span>→</span></Link>
             </div>
             <div className="essentials__item">
               <div className="essentials__photo">
@@ -159,7 +159,7 @@ export default class IndexPage extends Component {
                 <div className="culture__info">
                   <em>the brand</em>
                   <h2>A club of individuals bonded by dreams, motivation, determination, dedication, ambition and status.</h2>
-                  <button>Instagram<span>→</span></button>
+                  <a href="https://www.instagram.com/milehigh_boysclub/">Instagram<span>→</span></a>
                 </div>
               </div>
               <div className="culture__right">

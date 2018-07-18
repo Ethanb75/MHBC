@@ -98,35 +98,12 @@ export default class Catalog extends Component {
             <div>
               {this.props.products.length} results
             </div>
-            {/* <span>1 2 3 ></span> */}
           </h2>
         </div>
         {/* {!this.state.isCartOpen && <button onClick={() => this.setState({ isCartOpen: true })}>Open Cart</button>} */}
         <main id="catalogMain">
           <div className="catalogFilter">
             <div className="filter">
-
-              {/* <Accordion as={Menu} vertical>
-                <Menu.Item>
-                  <Accordion.Title
-                    active={filterIndex === 0}
-                    content='Size'
-                    index={0}
-                    onClick={this.handleFilterClick}
-                  />
-                  <Accordion.Content active={filterIndex === 0} content={SizeForm} />
-                </Menu.Item>
-
-                <Menu.Item>
-                  <Accordion.Title
-                    active={filterIndex === 1}
-                    content='Colors'
-                    index={1}
-                    onClick={this.handleFilterClick}
-                  />
-                  <Accordion.Content active={filterIndex === 1} content={ColorForm} />
-                </Menu.Item>
-              </Accordion> */}
               <label>Filter By</label>
               <ul>
                 <li>Featured</li>

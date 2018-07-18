@@ -1,26 +1,39 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet';
-
+// import { Accordion, Form, Menu } from 'semantic-ui-react';
 import Link from 'gatsby-link';
 
 // import client from '../shopify';
 
 import VariantSelector from '../components/VariantSelector';
 
+// import 'semantic-ui-css/semantic.min.css';
 import './ProductView.css';
 
 const mockProduct = 'https://cdn.shopify.com/s/files/1/0141/0855/7370/files/mockProduct.jpeg?2414997021602847072'
+let animTimer;
+
+function animateButton(timestamp) {
+  let buyButton = document.querySelector('.productView__select button');
+  if (!animTimer) animTimer = timestamp;
+
+  var progress = timestamp - animTimer;
+
+  buyButton.classList.add('animateBtn');
+
+  if (progress < 1500) {
+    window.requestAnimationFrame(animateButton);
+  } else {
+    // remove class
+    buyButton.classList.remove('animateBtn');
+    animTimer = null;
+  }
+}
 
 export default class ProductView extends Component {
   state = {
     product: undefined
   }
-
-  // constructor(props) {
-  //   super(props);
-
-  //   this.openCheckout = this.openCheckout.bind(this);
-  // }
 
   componentDidMount() {
     let defaultOptionValues = {};
@@ -54,19 +67,6 @@ export default class ProductView extends Component {
     return (image || primary).src;
   }
 
-  addVariantToCart = (variantId, quantity) => {
-    const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }]
-    const checkoutId = window.localStorage.getItem('checkoutId')
-
-
-    // used to be this.props.client.... ??
-    return this.props.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-      // this.setState({
-      //   checkout: res,
-      // });
-    });
-  }
-
   handleOptionChange(event) {
     const target = event.target
     let selectedOptions = this.state.selectedOptions;
@@ -86,8 +86,6 @@ export default class ProductView extends Component {
     });
   }
   render() {
-
-
 
     if (this.state.product) {
       let variantImage = this.state.selectedVariantImage || this.state.product.images[0]
@@ -119,7 +117,12 @@ export default class ProductView extends Component {
               <input min="1" type="number" className="Product__option" defaultValue={variantQuantity} onChange={ev => this.handleQuantityChange(ev)}></input>
             </div>
             <div>
-              <button onClick={() => this.addVariantToCart(variant.id, variantQuantity)}>Add to Cart</button>
+              <button onClick={ev => {
+                let start;
+                this.props.addVariantToCart(variant.id, variantQuantity);
+                console.log(ev.target);
+                window.requestAnimationFrame(animateButton, start, ev.target)
+              }}>Add to Cart</button>
             </div>
           </div>
 
@@ -129,9 +132,6 @@ export default class ProductView extends Component {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               </Link>
             </div>
-
-            {/* need to get a mock photo that says 'photo soon' instead of 'null' */}
-            {/* {this.state.product.images.length ? <img src={variantImage.src && mockProduct} alt={`${this.state.product.title} product shot`} /> : null} */}
             <div className="productView__details">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>

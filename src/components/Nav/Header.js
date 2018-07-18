@@ -44,12 +44,8 @@ export default class Header extends Component {
     return cartItems;
   }
 
-  componentDidUpdate() {
-
-  }
   render() {
     const { isNavOpen } = this.state;
-    console.log('header is rendering...');
 
     return (
       <div className="nav">
@@ -98,7 +94,7 @@ export default class Header extends Component {
                 <a href="">Facebook</a>
               </li>
               <li>
-                <a href="">Instagram</a>
+                <a href="https://www.instagram.com/milehigh_boysclub/">Instagram</a>
               </li>
               <li>
                 <a href="">Twitter</a>

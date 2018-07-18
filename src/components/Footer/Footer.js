@@ -25,7 +25,7 @@ const Footer = () => (
             <a href="">Facebook</a>
           </span>
           <span>
-            <a href="">Instagram</a>
+            <a href="https://www.instagram.com/milehigh_boysclub/">Instagram</a>
           </span>
           <span>
             <a href="">Twitter</a>
@@ -33,16 +33,20 @@ const Footer = () => (
         </div>
       </div>
       <ul>
-        {/* possibly no label */}
-        <label></label>
-        <li>Home</li>
-        <li>About</li>
-        <li>Catalog</li>
-        <li>{/*mail to link for now*/}Careers</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/en/Culture">About</Link>
+        </li>
+        <li>
+          <Link to="/en/Catalog">Catalog</Link>
+        </li>
+        <li>
+          <a href="mailto:milehighboysclub@gmail.com">Careers</a>
+        </li>
       </ul>
       <ul>
-        {/* possibly no label */}
-        <label></label>
         <li>Warranty</li>
         <li>Shipping Policy</li>
         <li>Return Policy</li>

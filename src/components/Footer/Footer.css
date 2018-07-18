@@ -43,6 +43,11 @@
   list-style: none;
 }
 
+.footer__links a {
+  color: hsla(0, 0%, 0%, .8);
+  text-decoration: none;
+}
+
 .footer__location span {
   margin-right: 10px;
 }

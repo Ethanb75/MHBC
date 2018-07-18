@@ -138,6 +138,16 @@
   flex-grow: 1;
 }
 
+.Product-loading {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.Product-loading img {
+  width: 5vw;
+  margin: 0;
+}
+
 
 @media screen and (max-width: 1000px) {
   .filter {

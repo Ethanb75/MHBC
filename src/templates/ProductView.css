@@ -18,7 +18,6 @@
 .productView__image {
   flex-grow: 1;
   position: relative;
-  /* background-position: right center; */
   background-size: cover;
 }
 
@@ -107,7 +106,34 @@
   letter-spacing: .5px;
   position: relative;
   transition: all .2s ease-out;
+  transform: scale(1) translateY(0);
   width: 100%;
+  overflow: hidden;
+}
+
+.productView button::after {
+  content: 'Added To Cart';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: all .3s ease-in-out;
+  background-color: #77F4D5;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productView button.animateBtn {
+  transform: translateY(-2);
+  transform: scale(1.05);
+}
+
+.productView button.animateBtn::after {
+  transform: translateY(0%);
 }
 
 
