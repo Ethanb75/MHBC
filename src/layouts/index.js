@@ -132,6 +132,11 @@ class TemplateWrapper extends Component {
         locale={langKey}
         messages={this.props.i18nMessages}
       >
+        <Helmet
+          meta={[
+            { name: "google-site-verification", content: "D9JFvU86XL9uleowtlA-p5qU2rPMyZ4KscvTQQV1Kpw" }
+          ]}
+        />
         <div>
           <Header
             langs={langsMenu}
