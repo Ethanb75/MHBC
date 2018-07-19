@@ -169,13 +169,25 @@ export default class IndexPage extends Component {
             </div>
           </div>
 
+
           <div id="caller">
             <div>
               <h2>Join our mailing list to stay up to date on new releases</h2>
             </div>
             <div>
-              <input type="text"></input>
-              <button>join now</button>
+              <form action="https://milehighboysclub.us18.list-manage.com/subscribe/post?u=6a934b18b1227fc6b2773aec3&amp;id=1e5daf0657" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                <div className="signupWrap">
+                  <div className="mc-field-group">
+                    <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" />
+                  </div>
+                  <div id="mce-responses" className="clear">
+                    <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
+                    <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
+                  </div>
+                  <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true" ><input type="text" name="b_6a934b18b1227fc6b2773aec3_1e5daf0657" tabIndex="-1" value="" /></div>
+                  <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" /></div>
+                </div>
+              </form>
             </div>
           </div>
         </main>

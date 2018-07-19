@@ -454,6 +454,22 @@ main {
   color: #0D0D0D;
 }
 
+#caller form {
+  margin: 0;
+}
+
+.signupWrap {
+  display: flex;
+}
+
+.clear input {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  cursor: pointer;
+}
+
+
+
 @keyframes slide{
   0% {
     transform: translate3d(0, 0, 0);
@@ -767,6 +783,9 @@ main {
     max-width: none;
     width: 100%;
     margin: 0;
+  }
+  .signupWrap {
+    flex-direction: column;
   }
   #caller input {
     margin: 0 0 10px 0;

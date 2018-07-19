@@ -120,8 +120,10 @@ export default class ProductView extends Component {
               <button onClick={ev => {
                 let start;
                 this.props.addVariantToCart(variant.id, variantQuantity);
-                console.log(ev.target);
-                window.requestAnimationFrame(animateButton, start, ev.target)
+                window.requestAnimationFrame(animateButton, start, ev.target);
+                setTimeout(() => {
+                  this.props.handleCartClose();
+                }, 1000)
               }}>Add to Cart</button>
             </div>
           </div>
