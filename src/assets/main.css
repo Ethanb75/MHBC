@@ -1,6 +1,6 @@
 
 
-/* @font-face {
+@font-face {
   font-family: 'Big Caslon';
   font-style: normal;
   font-weight: 500;
@@ -8,16 +8,16 @@
        url('fonts/BCM.woff2') format('woff2')
        url('fonts/BCM.woff') format('woff'),
        url('fonts/BCM.ttf') format('truetype'); 
-} */
+}
 
-@font-face {
+/* @font-face {
   font-family: 'Big Caslon';
   font-style: normal;
   font-weight: 500;
   src: url('fonts/BCM.woff2') format('woff2')
        url('fonts/BCM.woff') format('woff'),
        url('fonts/BCM.ttf') format('truetype'); 
-}
+} */
 
 @font-face {
   font-family: 'Erbar AT Condensed';
