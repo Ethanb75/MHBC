@@ -23,7 +23,8 @@ class TemplateWrapper extends Component {
       isCartOpen: false,
       checkout: { lineItems: [] },
       products: [],
-      shop: {}
+      shop: {},
+      collections: []
     };
 
     this.handleCartClose = this.handleCartClose.bind(this);
@@ -50,6 +51,12 @@ class TemplateWrapper extends Component {
         });
       })
     }
+
+    client.collection.fetchAll().then((collections) => {
+      this.setState({
+        collections
+      })
+    });
 
     client.product.fetchAll().then((res) => {
       this.setState({
@@ -116,16 +123,11 @@ class TemplateWrapper extends Component {
     const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
     const { addVariantToCart, updateQuantityInCart, handleCartClose, removeLineItemInCart, filterProductsByType } = this;
 
-    // this.handleCartClose = this.handleCartClose.bind(this);
-    // this.toggleCart = this.toggleCart.bind(this);
-
-    const { products, isCartOpen, checkout, shop } = this.state;
+    const { products, isCartOpen, checkout, shop, collections } = this.state;
 
     const langKey = getCurrentLangKey(langs, defaultLangKey, url);
     const homeLink = `/${langKey}/`;
     const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url));
-
-    // console.log(checkout);
 
     return (
       <IntlProvider
@@ -133,7 +135,6 @@ class TemplateWrapper extends Component {
         messages={this.props.i18nMessages}
       >
         <div>
-
           <Helmet
             meta={[
               { name: "google-site-verification", content: "D9JFvU86XL9uleowtlA-p5qU2rPMyZ4KscvTQQV1Kpw" }
@@ -148,7 +149,7 @@ class TemplateWrapper extends Component {
             removeLineItemInCart={this.removeLineItemInCart}
             toggleCart={this.toggleCart}
           />
-          <div>
+          <div className="mainWrap">
             {this.props.children({
               ...this.props,
               addVariantToCart,
@@ -158,6 +159,7 @@ class TemplateWrapper extends Component {
               filterProductsByType,
               client,
               checkout,
+              collections,
               working: 'yeehaw!',
               products
             })}

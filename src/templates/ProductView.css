@@ -1,3 +1,10 @@
+:root {
+  --col: calc(100vw / 8);
+  --white: #fff;
+  --black: #000;
+  --gold: #84754E;
+}
+
 .productView {
   display: flex;
   max-height: 100vh;
@@ -60,7 +67,7 @@
   left: 0;
   bottom: -20px;
   height: 2.5px;
-  background-color: #F2CD5E;
+  background-color: var(--gold);
   z-index: -1;
 }
 
@@ -96,14 +103,14 @@
 }
 
 .productView__select button {
-  background-color: #F2CD5E;
+  background-color: var(--gold);
   border: none;
   padding: 20px 35px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
   font-size: .714em;
-  letter-spacing: .5px;
+  letter-spacing: 2px;
   position: relative;
   transition: all .2s ease-out;
   transform: scale(1) translateY(0);
@@ -120,7 +127,8 @@
   height: 100%;
   transform: translateY(100%);
   transition: all .3s ease-in-out;
-  background-color: #77F4D5;
+  background-color: white;
+  color: var(--gold);
   z-index: 10;
   display: flex;
   justify-content: center;

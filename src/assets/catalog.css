@@ -1,7 +1,9 @@
 :root {
   --col: calc(100vw / 8);
+  --white: #fff;
+  --black: #000;
+  --gold: #84754E;
 }
-
 
 
 /* catalog header ----------------------------------------------------------------------------- */
@@ -18,13 +20,13 @@
 #catalogHeader h1 {
   position: absolute;
   right: 0;
-  bottom: -.4em;
+  bottom: -.5em;
   font-size: 10.541em;
   font-weight: 900;
-  letter-spacing: -7.5px;
   margin: 0;
   color: #0D0D0D;
-  text-transform: uppercase
+  text-transform: uppercase;
+  text-shadow: 2px 4px 6px rgba(0,0,0,0.2);
 }
 
 #catalogHeader img {
@@ -41,7 +43,7 @@
 
 .catalogHeader__imgWrap::before {
   content: '';
-  background-color: #F2CD5E;
+  background-color: var(--gold);
   position: absolute;
   top: 20px;
   left: 20px;
@@ -70,16 +72,13 @@
 .catalogCategory h2 {
   margin-bottom: 0px;
   padding-bottom: 10px;
-  /* border-bottom: 4px solid rgba(13, 13, 13, 0.205); */
   font-size: 1em;
-  /* font-weight: 900; */
-  /* letter-spacing: -2px;  */
   color: #0D0D0D66; 
-  /* color: #F2CD5E; */
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: .5px;
+  letter-spacing: 2px;
   /* font-size: .714em; */
+  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
 }
 
 .catalogCategory h2 > div {
@@ -91,27 +90,33 @@
   padding: 40px;
   background-color: #0D0D0D;
   color: whitesmoke;
-  min-width: 280px;
+  width: 320px;
 }
 
 .filter > label {
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #F2CD5E;
+  border-bottom: 1px solid var(--gold);
   display: block;
+}
+
+.filter ul {
+  margin-left: 30px;
 }
 
 .filter li {
   list-style: none;
   margin-bottom: 20px;
   cursor: pointer;
+  letter-spacing: 1px;
+  color: #fff9;
 }
 
 .filter > ul {
   margin-left: 0px;
-  
 }
 
 .filter__expands {
@@ -132,6 +137,13 @@
 .filter__expands > ul {
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.ui.accordion .title:not(.ui) {
+  color: white;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
 }
 
 .Product-wrapper {
@@ -172,7 +184,7 @@
     bottom: -100px;
     width: 100%;
     text-align: center;
-    letter-spacing: -5px;
+    letter-spacing: -2px;
   }
   .catalogCategory {
     padding: 60px 20px 20px 20px;
@@ -192,5 +204,11 @@
   .productWrap {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #catalogHeader h1 {
+    font-size: 3.842em;
   }
 }

@@ -1,3 +1,10 @@
+:root {
+  --col: calc(100vw / 8);
+  --white: #fff;
+  --black: #000;
+  --gold: #84754E;
+}
+
 .topBar {
   display: flex;
   justify-content: space-between;
@@ -24,7 +31,7 @@
 .topBar__logo {
   margin: 0;
   padding: 30px;
-  background-color: #fafafa;
+  background-color: var(--black);
 }
 
 .topBar__logo a {
@@ -49,7 +56,7 @@ li.topBar__link a {
   font-weight: 900;
   text-transform: uppercase;
   color: #fafafa;
-  letter-spacing: .5px;
+  letter-spacing: 2px;
   transition: color .2s ease;
   position: relative;
 }
@@ -61,7 +68,7 @@ li.topBar__link a.catalog {
 li.topBar__link a::before, li.topBar__link a.catalog::before {
   content: '';
   position: absolute;
-  background: #F2CD5E;
+  background: var(--gold);
   bottom: -10px;
   width: 0;
   left: 0;
@@ -70,7 +77,7 @@ li.topBar__link a::before, li.topBar__link a.catalog::before {
 }
 
 li.topBar__link a:hover, li.topBar__link a.catalog:hover, li.topBar__link a.active, li.topBar__link a.catalog.active {
-  color: #F2CD5E;
+  color: var(--gold);
 }
 
 li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.topBar__link a.active::before, li.topBar__link a.catalog.active::before {
@@ -110,11 +117,11 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 }
 
 .sideBar a {
-  font-size: .75em;
+  font-size: .714em;
   font-weight: 900;
   text-transform: uppercase;
   color: rgb(25, 25, 25);
-  letter-spacing: .5px;
+  letter-spacing: 2px;
   transition: color .2s ease;
 }
 
@@ -156,7 +163,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 }
 
 .sideBar__btn.catalog button > span {
-  background-color: #F2CD5E;
+  background-color: var(--gold);
 }
 
 .sideBar__btn button > span:nth-child(2) {
@@ -215,7 +222,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 }
 
 .sideBar__cart svg:hover {
-  stroke: #F2CD5E;
+  stroke: var(--gold);
 }
 
 
@@ -271,7 +278,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   left: -80px;
   width: 0px;
   height: 5px;
-  background-color: #F2CD5E;
+  background-color: var(--gold);
   transition: all .2s ease-out;
 }
 

@@ -7,7 +7,6 @@ import loadingIcon from '../assets/loading.svg'
 
 export default class Products extends Component {
   render() {
-    console.log(this.props.products);
     let products = this.props.products.map((product) => {
       return (
         <Product

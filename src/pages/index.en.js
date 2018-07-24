@@ -13,6 +13,9 @@ import featured1 from '../assets/test1.png';
 import MHBC1 from '../assets/mile-high-boys-club.png';
 import MHBC2 from '../assets/mile-high-boys-club2.png';
 import MHBC3 from '../assets/mile-high-boys-club3.png';
+import MHBC4 from '../assets/chris.jpg';
+import twan from '../assets/twan-da-god.jpg';
+import stickers from '../assets/stickers.jpg';
 import designer from '../assets/designer.png';
 
 //slides
@@ -62,7 +65,6 @@ export default class IndexPage extends Component {
   }
   render() {
     const { backgroundNumber } = this.state;
-    console.log(this.props.working);
     return (
       <div className="pageWrapper">
         <Helmet
@@ -73,8 +75,8 @@ export default class IndexPage extends Component {
           ]}
         />
         <header id="indexHeader">
-          <div className="title">
-            <h1>MHBC</h1>
+          <div className="header__title">
+            <h1>MHBC <span>mile high boys club</span></h1>
             <p>
               MHBC is more than a brand it's a lifestyle. A club of individuals bonded by dreams,
               motivation, determination, dedication, ambition and status. 🛫
@@ -161,12 +163,15 @@ export default class IndexPage extends Component {
                   <h2>A club of individuals bonded by dreams, motivation, determination, dedication, ambition and status.</h2>
                   <a href="https://www.instagram.com/milehigh_boysclub/">Instagram<span>→</span></a>
                 </div>
+                <img src={twan} />
               </div>
               <div className="culture__right">
                 <img src={MHBC2} style={{ zIndex: 10 }} />
                 <img src={MHBC3} />
+                <img src={stickers} />
               </div>
             </div>
+            <p className="culture__more">for more, browse our <a href="https://www.instagram.com/milehigh_boysclub/">Instagram.</a></p>
           </div>
 
 

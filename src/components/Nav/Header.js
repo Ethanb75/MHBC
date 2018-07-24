@@ -4,7 +4,7 @@ import SelectLanguage from '../SelectLanguage';
 
 import './Header.css';
 
-import logo from '../../assets/logo-clean.png';
+import logo from '../../assets/logo-blk.png';
 
 
 // import client from '../../shopify';

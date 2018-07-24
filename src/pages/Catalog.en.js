@@ -1,52 +1,35 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-// import { Accordion, Form, Menu } from 'semantic-ui-react';
+import { Accordion, Icon, Label } from 'semantic-ui-react';
 import Helmet from 'react-helmet'
 
 
 import Products from '../components/Products';
 import Footer from '../components/Footer/Footer';
 
-// import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css';
 import '../assets/catalog.css';
 
 import heading from '../assets/catalogHeader.jpeg';
 
-// const ColorForm = (
-//   <Form>
-//     <Form.Group grouped>
-//       <Form.Checkbox label='Red' name='color' value='red' />
-//       <Form.Checkbox label='Orange' name='color' value='orange' />
-//       <Form.Checkbox label='Green' name='color' value='green' />
-//       <Form.Checkbox label='Blue' name='color' value='blue' />
-//     </Form.Group>
-//   </Form>
-// )
 
-// const SizeForm = (
-//   <Form>
-//     <Form.Group grouped>
-//       <Form.Radio label='Small' name='size' type='radio' value='small' />
-//       <Form.Radio label='Medium' name='size' type='radio' value='medium' />
-//       <Form.Radio label='Large' name='size' type='radio' value='large' />
-//       <Form.Radio label='X-Large' name='size' type='radio' value='x-large' />
-//     </Form.Group>
-//   </Form>
-// )
+// example:
+// activeFilters = ['home collection', '']
 
 export default class Catalog extends Component {
   state = {
     filteredProducts: undefined,
-    filters: [],
-    filterIndex: 0
+    activeFilters: [],
+    filterIndex: 0,
+    activeFilterIndex: -1
   }
 
   handleFilterClick = (e, titleProps) => {
     const { index } = titleProps
-    const { filterIndex } = this.state
-    const newIndex = filterIndex === index ? -1 : index
+    const { activeFilterIndex } = this.state
+    const newIndex = activeFilterIndex === index ? -1 : index
 
-    this.setState({ filterIndex: newIndex })
+    this.setState({ activeFilterIndex: newIndex })
   }
 
   filterProductsByType(productType) {
@@ -71,8 +54,33 @@ export default class Catalog extends Component {
   }
 
   render() {
-    // console.log(this.state.checkout.subtotalPrice);
-    const { filterIndex } = this.state;
+    // console.log(this.props.checkout.subtotalPrice);
+    // console.log(this.props.products);
+
+    //find all the product types and filter to remove duplicates
+    let productTypes = this.props.products
+      .map(product => {
+        return product.productType;
+      })
+      .filter((val, index, self) => self.indexOf(val) === index)
+      .map(type => {
+        return (
+          <li>{type}</li>
+        )
+      });
+    let collections = this.props.collections.map(collection => {
+      return (
+        <li key={collection.title}>
+          {collection.title}
+        </li>
+      )
+    });
+
+    // let activeFilters = 
+
+
+
+    const { activeFilterIndex } = this.state;
     return (
       <div>
         <Helmet
@@ -97,6 +105,7 @@ export default class Catalog extends Component {
             </span>
             <div>
               {this.props.products.length} results
+              <span></span>
             </div>
           </h2>
         </div>
@@ -105,36 +114,33 @@ export default class Catalog extends Component {
           <div className="catalogFilter">
             <div className="filter">
               <label>Filter By</label>
-              <ul>
-                <li>Featured</li>
-                <li className="filter__expands open">Category
-                  <span>+</span>
+              <Accordion fluid>
+                <Accordion.Title active={activeFilterIndex === 0} index={0} onClick={this.handleFilterClick}>
+                  <Icon name='dropdown' />
+                  Collection
+                </Accordion.Title>
+                <Accordion.Content active={activeFilterIndex === 0}>
                   <ul>
-                    <li>All</li>
-                    <li>Shirts</li>
-                    <li onClick={() => this.filterProductsByType('shoes')}>Shoes</li>
-                    <li>Bottoms</li>
-                    <li>Accessories</li>
+                    {collections}
                   </ul>
-                </li>
-                <li className="filter__expands">Collection
-                  <span>+</span>
+                </Accordion.Content>
+
+                <Accordion.Title active={activeFilterIndex === 1} index={1} onClick={this.handleFilterClick}>
+                  <Icon name='dropdown' />
+                  Product Type
+                </Accordion.Title>
+                <Accordion.Content active={activeFilterIndex === 1}>
                   <ul>
-                    <li>All</li>
-                    <li>Shirts</li>
-                    <li onClick={() => this.filterProductsByType('shoes')}>Shoes</li>
-                    <li>Bottoms</li>
-                    <li>Accessories</li>
+                    {productTypes}
                   </ul>
-                </li>
-              </ul>
+                </Accordion.Content>
+              </Accordion>
             </div>
           </div>
 
           {/* if filtered is full, render that, if not render all products */}
           <Products
             products={this.state.filteredProducts ? this.state.filteredProducts : this.props.products}
-            // products={this.props.products && this.state.filteredProducts}
             client={this.props.client}
             addVariantToCart={this.addVariantToCart}
           />
@@ -145,23 +151,3 @@ export default class Catalog extends Component {
     )
   }
 }
-// export const query = graphql`
-//   query CatalogQuery {
-//   allShopifyProduct {
-//       edges {
-//         node {
-//           id
-//           title
-//           handle
-//           productType
-//           vendor
-//           variants {
-//             id
-//             title
-//             price
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;

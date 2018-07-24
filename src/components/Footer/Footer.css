@@ -1,3 +1,10 @@
+:root {
+  --col: calc(100vw / 8);
+  --white: #fff;
+  --black: #000;
+  --gold: #84754E;
+}
+
 #footer {
   display: flex;
 }
@@ -12,11 +19,12 @@
 }
 
 .footer__quote h4 {
-  color: #F2CD5E;
+  color: var(--gold);
   font-size: 7.53em;
   font-weight: 900;
   letter-spacing: -12.5px;
   margin: 0;
+  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
 }
 
 .footer__links {
@@ -41,11 +49,13 @@
   text-transform: uppercase;
   font-weight: 600;
   list-style: none;
+  letter-spacing: 2px;
 }
 
 .footer__links a {
   color: hsla(0, 0%, 0%, .8);
   text-decoration: none;
+  letter-spacing: 2px;
 }
 
 .footer__location span {
@@ -55,4 +65,5 @@
 .footer__location a {
   font-size: 1.4em;
   color: hsla(0, 0%, 0%, .8);
+  letter-spacing: 1px;
 }

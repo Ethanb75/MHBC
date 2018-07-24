@@ -26,6 +26,8 @@
 .product h5 {
   margin-bottom: 20px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .product img {
