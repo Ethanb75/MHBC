@@ -28,11 +28,6 @@
   background-size: cover;
 }
 
-.productView__image img {
-  height: 100%;
-  margin: 0;
-}
-
 .productView__details {
   position: absolute;
   top: 360px;
@@ -133,6 +128,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.productView__select button:hover {
+  background: black;
+  color: var(--gold);
 }
 
 .productView button.animateBtn {

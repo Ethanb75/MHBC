@@ -128,7 +128,10 @@ export default class ProductView extends Component {
             </div>
           </div>
 
-          <div className="productView__image" style={this.state.product.images.length ? { backgroundImage: `url(${variantImage.src && mockProduct})` } : { backgroundImage: `url(${mockProduct})` }}>
+          <div
+            className="productView__image"
+            style={this.state.product.images.length ? { backgroundImage: `url(${variantImage.src && mockProduct})` } : { backgroundImage: `url(${mockProduct})` }}
+          >
             <div className="productView__return">
               <Link to="/en/Catalog">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
