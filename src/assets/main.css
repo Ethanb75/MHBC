@@ -5,9 +5,9 @@
   font-style: normal;
   font-weight: 500;
   src: local('Big Caslon Medium'),
-       url('fonts/BCM.woff2') format('woff2')
-       url('fonts/BCM.woff') format('woff'),
-       url('fonts/BCM.ttf') format('truetype'); 
+       url('./fonts/BCM.woff2') format('woff2')
+       url('./fonts/BCM.woff') format('woff'),
+       url('./fonts/BCM.ttf') format('truetype'); 
 }
 
 /* @font-face {
@@ -24,9 +24,9 @@
   font-style: normal;
   font-weight: 300;
   src: local('Erbar AT Condensed Light'),
-       url('fonts/ErbarAtCdLtReg.woff2') format('woff2'),
-       url('fonts/ErbarAtCdLtReg.woff') format('woff'),
-       url('fonts/ErbarAtCdLtReg.ttf') format('truetype');
+       url('./fonts/ErbarAtCdLtReg.woff2') format('woff2'),
+       url('./fonts/ErbarAtCdLtReg.woff') format('woff'),
+       url('./fonts/ErbarAtCdLtReg.ttf') format('truetype');
 }
 
 /* font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif; */
@@ -73,7 +73,6 @@ button {
 }
 
 #indexHeader {
-  /* padding-top: calc(20px * 20); */
   height: 100vh;
   position: relative;
   background: linear-gradient(to top, rgba(0, 0, 0, .9) 10%,rgba(0, 0, 0, 0) 100%);
@@ -86,12 +85,10 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(13, 13, 13, .15); */
   z-index: 0;
 }
 
 .header__title {
-  /* margin-left: calc(var(--col) / 2); */
   margin-left: var(--col);
   padding-top: 38vh;
   position: relative;
@@ -107,7 +104,7 @@ button {
   margin-left: -.05em;
   margin-bottom: 20px;
   line-height: .8;
-  text-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+  /* text-shadow: 2px 4px 6px rgba(0,0,0,0.3); */
   position: relative;
 }
 
@@ -126,7 +123,6 @@ button {
 .header__title p {
   font-weight: 600;
   max-width: 25%;
-  /* color: rgba(255, 255, 255, .85) */
   color: #DBDBDB;
   margin-bottom: 80px;
   letter-spacing: 1px;
