@@ -5,9 +5,9 @@
   font-style: normal;
   font-weight: 500;
   src: local('Big Caslon Medium'),
+       url('/fonts/BCM.woff2') format('woff2')
        url('/fonts/BCM.woff') format('woff'),
-       url('/fonts/BCM.ttf') format('truetype')
-      
+       url('/fonts/BCM.ttf') format('truetype'); 
 }
 
 @font-face {
@@ -17,7 +17,7 @@
   src: local('Erbar AT Condensed Light'),
        url('/fonts/ErbarAtCdLtReg.woff2') format('woff2'),
        url('/fonts/ErbarAtCdLtReg.woff') format('woff'),
-       url('/fonts/ErbarAtCdLtReg.ttf') format('truetype')
+       url('/fonts/ErbarAtCdLtReg.ttf') format('truetype');
 }
 
 /* font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif; */
@@ -94,7 +94,7 @@ button {
   color: var(--gold);
   font-weight: 900;
   letter-spacing: -.05em;
-  font-family: 'Big Caslon', Helvetica, Arial, sans-serif !important;
+  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
   margin-left: -.05em;
   margin-bottom: 20px;
   line-height: .8;
