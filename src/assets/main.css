@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600,900');
+
+
+/* @font-face {
+  font-family: 'Big Caslon';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Big Caslon Medium'),
+       url('fonts/BCM.woff2') format('woff2')
+       url('fonts/BCM.woff') format('woff'),
+       url('fonts/BCM.ttf') format('truetype'); 
+} */
 
 @font-face {
   font-family: 'Big Caslon';
   font-style: normal;
   font-weight: 500;
-  src: local('Big Caslon Medium'),
-       url('/fonts/BCM.woff2') format('woff2')
-       url('/fonts/BCM.woff') format('woff'),
-       url('/fonts/BCM.ttf') format('truetype'); 
+  src: url('fonts/BCM.woff2') format('woff2')
+       url('fonts/BCM.woff') format('woff'),
+       url('fonts/BCM.ttf') format('truetype'); 
 }
 
 @font-face {
@@ -15,9 +24,9 @@
   font-style: normal;
   font-weight: 300;
   src: local('Erbar AT Condensed Light'),
-       url('/fonts/ErbarAtCdLtReg.woff2') format('woff2'),
-       url('/fonts/ErbarAtCdLtReg.woff') format('woff'),
-       url('/fonts/ErbarAtCdLtReg.ttf') format('truetype');
+       url('fonts/ErbarAtCdLtReg.woff2') format('woff2'),
+       url('fonts/ErbarAtCdLtReg.woff') format('woff'),
+       url('fonts/ErbarAtCdLtReg.ttf') format('truetype');
 }
 
 /* font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif; */
