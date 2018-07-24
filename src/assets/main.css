@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 500;
   src: local('Big Caslon Medium'),
-       url('./fonts/BCM.woff2') format('woff2')
+       url('./fonts/BCM.woff2') format('woff2'),
        url('./fonts/BCM.woff') format('woff'),
        url('./fonts/BCM.ttf') format('truetype'); 
 }
