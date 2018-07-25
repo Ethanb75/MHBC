@@ -10,15 +10,6 @@
        url('./fonts/BCM.ttf') format('truetype'); 
 }
 
-/* @font-face {
-  font-family: 'Big Caslon';
-  font-style: normal;
-  font-weight: 500;
-  src: url('fonts/BCM.woff2') format('woff2')
-       url('fonts/BCM.woff') format('woff'),
-       url('fonts/BCM.ttf') format('truetype'); 
-} */
-
 @font-face {
   font-family: 'Erbar AT Condensed';
   font-style: normal;
@@ -51,7 +42,7 @@ a:hover {
   color: var(--gold);
 }
 
-body h5, body h6, body input, body span, body * {
+body h5, body h6, body input, body * {
   font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
 }
 
@@ -89,45 +80,49 @@ button {
 }
 
 .header__title {
-  margin-left: var(--col);
-  padding-top: 38vh;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   z-index: 1;
+  padding-bottom: 9.2vh;
 }
 
 .header__title h1 {
-  font-size: 18.488em;
-  color: var(--gold);
+  font-size: 10.541em;
+  color: var(--white);
   font-weight: 900;
-  letter-spacing: -.05em;
-  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
-  margin-left: -.05em;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   line-height: .8;
-  /* text-shadow: 2px 4px 6px rgba(0,0,0,0.3); */
+  text-transform: uppercase;
   position: relative;
 }
 
 .header__title h1 span {
-  position: absolute;
-  text-transform: uppercase;
-  left: 11px;
-  top: -80px;
-  font-size: 1rem;
-  letter-spacing: .25em;
-  color: #DBDBDB;
-  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
-  text-shadow: none;
+  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.header__title > div:first-of-type {
+  border-top: .45rem solid var(--gold);
+  padding-top: 40px;
+
 }
 
 .header__title p {
-  font-weight: 600;
-  max-width: 25%;
-  color: #DBDBDB;
+  color: var(--gold);
   margin-bottom: 80px;
-  letter-spacing: 1px;
+  padding-top: 20px;
+  border-top: .45rem solid var(--gold);
+  letter-spacing: .45em;
+  line-height: 1;
   font-weight: 300;
-  font-size: 1.4em;
+  font-size: 3.842em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .header__title button, .header__title a {
@@ -213,7 +208,7 @@ button {
   position: absolute;
   bottom: -5px;
   right: 80px;
-  /* display: none; */
+  display: none;
 }
 
 .featured > span {
@@ -605,11 +600,11 @@ p.culture__more {
     font-size: 13px;
   }
   .header__title h1 {
-    font-size: 14.758em;
+    font-size: 7.53em;
   }
   .header__title p {
-    max-width: 38%;
     margin-bottom: 60px;
+    font-size: 2.744em;
   }
   .topBar__logo img {
     width: 80px;
@@ -657,15 +652,18 @@ p.culture__more {
   }
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   .header__title {
     padding-top: 38vh;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
+  .header__title {
+    padding-right: 60px;
+  }
   .header__title h1 {
-    font-size: 10.541em;
+    /* font-size: 10.541em; */
   }
   #indexHeader {
     height: 75vh;
@@ -761,9 +759,6 @@ p.culture__more {
     margin-right: 10px;
     margin-top: 0;
   }
-  .header__title {
-    margin-left: 40px;
-  }
   .sideBar {
     height: 60px;
     width: 100%;
@@ -793,9 +788,25 @@ p.culture__more {
   .featured {
     display: none;
   }
+  .header__title {
+    padding-right: 0;
+    padding-bottom: 12.5vh;
+  }
+  .header__title h1 {
+    font-size: 5.378em;
+  }
   .header__title p {
-    max-width: 62%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 1.96em;
+    border-top: .35rem solid #84754E;
+    padding-top: .2em;
+  }
+  .header__title > div:first-of-type {
+    padding-top: 1.25rem;
+    border-top: .35rem solid #84754E;
+  }
+  .header__title h1 span {
+    margin-bottom: .2em;
   }
   .footer__links {
     padding: 80px 20px;
@@ -862,14 +873,14 @@ p.culture__more {
     color: var(--gold);
   }
   #indexHeader {
-    height: 85vh;
+    height: 90vh;
   }
   .header__title h1 {
-    font-size: 7.53em;
+    font-size: 4.3em;
   }
   .header__title p {
-    max-width: 85%;
     margin-bottom: 40px;
+    font-size: 1.6em;
   }
   #culture {
     padding-bottom: 0;
@@ -929,9 +940,10 @@ p.culture__more {
 @media screen and (max-width: 360px) {
   .header__title p {
     margin-bottom: 20px;
+    font-size: 1.4em;
   }
   .header__title h1 {
-    font-size: 5.378em;
+    font-size: 3.842em;
   }
   .essentials__item.intro h2, .culture__info h2, .designer__info h2, #catalog_caller h2, #caller h2 {
     font-size: 1.4em;

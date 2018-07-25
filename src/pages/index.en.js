@@ -76,11 +76,18 @@ export default class IndexPage extends Component {
         />
         <header id="indexHeader">
           <div className="header__title">
-            <h1>MHBC <span>mile high boys club</span></h1>
+            {/* <h1>MHBC <span>mile high boys club</span></h1>
             <p>
               MHBC is more than a brand it's a lifestyle. A club of individuals bonded by dreams,
               motivation, determination, dedication, ambition and status. 🛫
-            </p>
+            </p> */}
+            <div>
+              <h1>
+                <span>Mile High</span>
+                <span>Boys Club</span>
+              </h1>
+              <p>Mark of Excellence</p>
+            </div>
             <div>
               <Link to="/en/Catalog">Catalog <span>&rarr;</span></Link>
             </div>
