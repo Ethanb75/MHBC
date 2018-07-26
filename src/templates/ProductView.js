@@ -101,6 +101,8 @@ export default class ProductView extends Component {
         );
       });
 
+      console.log('variantImg', variantImage)
+
       return (
         <div className="productView">
           <Helmet
