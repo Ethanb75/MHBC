@@ -939,7 +939,7 @@ p.culture__more {
 
 @media screen and (max-width: 360px) {
   .header__title p {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-size: 1.4em;
   }
   .header__title h1 {
