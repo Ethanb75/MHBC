@@ -20,9 +20,6 @@
        url('./fonts/ErbarAtCdLtReg.ttf') format('truetype');
 }
 
-/* font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif; */
-
-
 
 :root {
   --col: calc(100vw / 8);
@@ -30,6 +27,15 @@
   --black: #000;
   --gold: #84754E;
   --lightWhite: #FFFCF5;
+}
+
+/* hide default controls for number inputs  */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 body {

@@ -65,7 +65,7 @@ export default class Catalog extends Component {
       .filter((val, index, self) => self.indexOf(val) === index)
       .map(type => {
         return (
-          <li>{type}</li>
+          <li key={type}>{type}</li>
         )
       });
     let collections = this.props.collections.map(collection => {
@@ -75,8 +75,6 @@ export default class Catalog extends Component {
         </li>
       )
     });
-
-    // let activeFilters = 
 
 
 

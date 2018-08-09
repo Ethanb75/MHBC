@@ -37,7 +37,8 @@ let backgroundArr = [
 
 export default class IndexPage extends Component {
   state = {
-    backgroundNumber: 0
+    backgroundNumber: 0,
+    homepageCollection: {}
   }
   changeBackground() {
     if (this.state.backgroundNumber + 1 === backgroundArr.length) {
@@ -47,6 +48,8 @@ export default class IndexPage extends Component {
     }
   }
   componentDidMount() {
+
+
     if (document.querySelector('.sideBar').classList.contains('catalog')) {
       document.querySelector('.footer__links').classList.remove('catalog');
       document.querySelector('.sideBar').classList.remove('catalog');
@@ -65,6 +68,18 @@ export default class IndexPage extends Component {
   }
   render() {
     const { backgroundNumber } = this.state;
+    // console.log(this.props.collections[0]);
+
+    // let homePageItems = this.props.collections[0].
+    // if (this.props.collections[0]) {
+    //   let collectionId = this.props.collections[0].id;
+    //   this.props.client.collection.fetchWithProducts(collectionId).then((collection) => {
+    //     // Do something with the collection
+    //     console.log(collection);
+    //     console.log(collection.products);
+    //   });
+    // }
+
     return (
       <div className="pageWrapper">
         <Helmet
@@ -76,11 +91,6 @@ export default class IndexPage extends Component {
         />
         <header id="indexHeader">
           <div className="header__title">
-            {/* <h1>MHBC <span>mile high boys club</span></h1>
-            <p>
-              MHBC is more than a brand it's a lifestyle. A club of individuals bonded by dreams,
-              motivation, determination, dedication, ambition and status. 🛫
-            </p> */}
             <div>
               <h1>
                 <span>Mile High</span>
@@ -187,7 +197,7 @@ export default class IndexPage extends Component {
               <h2>Join our mailing list to stay up to date on new releases</h2>
             </div>
             <div>
-              <form action="https://milehighboysclub.us18.list-manage.com/subscribe/post?u=6a934b18b1227fc6b2773aec3&amp;id=1e5daf0657" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <form action="https://milehighboysclub.us18.list-manage.com/subscribe/post?u=6a934b18b1227fc6b2773aec3&amp;id=1e5daf0657" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
                 <div className="signupWrap">
                   <div className="mc-field-group">
                     <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" />
