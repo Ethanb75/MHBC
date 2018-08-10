@@ -6,8 +6,6 @@ import VariantSelector from '../components/VariantSelector';
 
 import './ProductView.css';
 
-import imagesLoaded from 'imagesloaded';
-
 
 const mockProduct = 'https://cdn.shopify.com/s/files/1/0141/0855/7370/files/mockProduct.jpeg?2414997021602847072'
 let animTimer;
@@ -106,7 +104,7 @@ export default class ProductView extends Component {
     const { currentProductImage } = this.state;
 
     this.setState({
-      currentProductImage: currentProductImage === 3 ? 0 : currentProductImage + 1
+      currentProductImage: currentProductImage === this.state.product.images.length - 1 ? 0 : currentProductImage + 1
     });
   }
 
@@ -205,8 +203,8 @@ export default class ProductView extends Component {
               </div> : null
           }
 
+          {/* load images but keep them hidden to cache the requests */}
           <span>
-
             {this.state.product.images.map(image => {
               return <span style={{ backgroundImage: `url(${image.src})` }}></span>
             })}

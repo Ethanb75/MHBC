@@ -258,12 +258,12 @@
     align-items: center;
   }
   .productView__image {
-    width: calc(100vw - 40px);
     height: 62vh;
     margin: 140px 0 0 0;
     position: initial;
     display: flex;
     order: 3;
+    width: 100vw;
   }
   .productImageControls {
     position: initial;
