@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet';
-// import { Accordion, Form, Menu } from 'semantic-ui-react';
 import Link from 'gatsby-link';
-
-// import client from '../shopify';
 
 import VariantSelector from '../components/VariantSelector';
 
-// import 'semantic-ui-css/semantic.min.css';
 import './ProductView.css';
 
+import imagesLoaded from 'imagesloaded';
+
+
 const mockProduct = 'https://cdn.shopify.com/s/files/1/0141/0855/7370/files/mockProduct.jpeg?2414997021602847072'
-let animTimer, imageAnimTimer;
+let animTimer;
 
 function animateButton(timestamp) {
   let buyButton = document.querySelector('.productView__select button');
@@ -30,27 +29,11 @@ function animateButton(timestamp) {
   }
 }
 
-// if you remove below, remove the imageAnimTimer variable
-// function changeImage(timestamp) {
-//   const el = document.querySelector('.productView__image');
-//   if (!imageAnimTimer) imageAnimTimer = timestamp;
-
-//   let progress = timestamp - imageAnimTimer;
-
-//   el.classList.add('imageLoaded');
-
-//   if (progress < 2000) {
-//     window.requestAnimationFrame(changeImage);
-//   } else {
-//     el.classList.remove('imageLoaded');
-//     imageAnimTimer = null;
-//   }
-// }
-
 export default class ProductView extends Component {
   state = {
     currentProductImage: 0,
-    product: undefined
+    product: undefined,
+    productImageLoaded: {}
   }
 
   componentDidMount() {
@@ -82,7 +65,10 @@ export default class ProductView extends Component {
 
     document.querySelector('.sideBar__btn').classList.add('catalog');
     document.querySelector('.sideBar').classList.add('catalog');
-    document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'))
+    document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'));
+
+
+    //image loaded handlers
   }
 
   findImage(images, variantId) {
@@ -192,7 +178,7 @@ export default class ProductView extends Component {
           {/* Productview image background image, if there isn't an image use the mock */}
           <div
             className="productView__image"
-            style={this.state.product.images.length ? { backgroundImage: `url(${mockProduct && variantImage.src})` } : { backgroundImage: `url(${mockProduct})` }}
+            style={this.state.product.images.length ? { backgroundImage: `url(${mockProduct && variantImage.src})`, animation: 'loadedImage 1s ease .2s forwards' } : { backgroundImage: `url(${mockProduct})` }}
           >
             <div className="productView__return">
               <Link to="/en/Catalog">
@@ -219,7 +205,12 @@ export default class ProductView extends Component {
               </div> : null
           }
 
+          <span>
 
+            {this.state.product.images.map(image => {
+              return <span style={{ backgroundImage: `url(${image.src})` }}></span>
+            })}
+          </span>
         </div>
       )
     } else {

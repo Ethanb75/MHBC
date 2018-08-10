@@ -13,6 +13,9 @@ export default class LineItem extends Component {
   }
 
   render() {
+
+    //TODO: fix edge case error where removing and item from shopify 
+    //      while users have said item in cart causes sitewide render issue
     return (
       <li className="Line-item">
         <button className="Line-item__remove" onClick={() => this.props.removeLineItemInCart(this.props.line_item.id)}>remove</button>
