@@ -50,5 +50,9 @@
 @media screen and (max-width: 800px) {
   .carouselWrap > img {
     width: 100%;
+    height: 100%;
+  }
+  .carouselWrap > img:first-of-type {
+    height: initial;
   }
 }

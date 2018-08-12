@@ -172,6 +172,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   width: 20px;
 }
 
+/* transform: rotate(-45deg) translateY(-0.65rem) translateX(-.75rem); */
 .sideBar__btn button.open > span:first-of-type {
   transform: rotate(-45deg) translateY(-.55rem) translateX(-.75rem);
   transform-origin: right;
@@ -181,7 +182,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 .sideBar__btn button.open > span:nth-of-type(2) {
   opacity: 0;
 }
-
+/* rotate(45deg) translateY(1.3rem); */
 .sideBar__btn button.open > span:last-of-type {
   transform: rotate(45deg) translateY(1.1rem);
   transform-origin: right;
