@@ -1,0 +1,54 @@
+.carouselWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carouselWrap > img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity .5s ease;
+  margin-bottom: 0;
+  width: 900px;
+}
+
+.carouselWrap > img:first-of-type {
+  position: relative;
+}
+
+.carousel__controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.carousel__controls button {
+  background: #84754E;
+  border: none;
+  cursor: pointer;
+  padding: 15px 35px;
+  line-height: .8;
+  transition: all .2s ease-in-out;
+}
+
+.carousel__controls button:last-of-type {
+  border-left: 1px solid #68572D;
+}
+
+.carousel__controls svg {
+  width: 1rem;
+}
+
+@media screen and (max-width: 1366px) {
+  .carouselWrap > img {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .carouselWrap > img {
+    width: 100%;
+  }
+}

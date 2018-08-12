@@ -31,6 +31,7 @@
   margin: 0;
   padding: 30px;
   background-color: var(--black);
+  z-index: 15;
 }
 
 .topBar__logo a {

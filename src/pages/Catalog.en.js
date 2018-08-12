@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 
 import Products from '../components/Products';
 import Footer from '../components/Footer/Footer';
+import Carousel from '../components/Carousel/Carousel';
 
 import 'semantic-ui-css/semantic.min.css';
 import '../assets/catalog.css';
@@ -41,6 +42,7 @@ export default class Catalog extends Component {
       })
     });
   }
+
   componentDidMount() {
     //TODO: re- fetch products after every load
 
@@ -90,10 +92,13 @@ export default class Catalog extends Component {
         />
         <header id="catalogHeader">
           <div>
-            <div className="catalogHeader__imgWrap">
-              <img src={heading} />
+            <Carousel />
+            <div className="catalogHeader__text">
+              <h1>Catalog</h1>
+              <p>
+                All products in our exclusive collection
+              </p>
             </div>
-            <h1>Catalog</h1>
           </div>
         </header>
         <div className="catalogCategory">

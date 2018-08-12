@@ -28,9 +28,9 @@
   background-size: cover;
 }
 
-.productView__image.imageLoaded {
+/* .productView__image.imageLoaded {
   animation: loadedImage .5s ease .2s forwards;
-}
+} */
 
 @keyframes loadedImage {
   from {opacity: 0}
@@ -186,7 +186,7 @@
 }
 
 .productImageControls svg {
-  width: 1.2rem;
+  width: 1rem;
 }
 
 .productImageControls button {
