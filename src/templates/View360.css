@@ -1,0 +1,84 @@
+.rotateView {
+  padding-top: 80px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotateView__photoList {
+  position: relative;
+}
+
+.rotateView__photoWrap {
+  opacity: 0;
+  transition: opacity .5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.rotateView__photoWrap.loaded {
+  opacity: 1;
+}
+
+.rotateView__photoWrap img {
+  position: absolute;
+  width: 1400px;
+  margin-bottom: 0;
+}
+
+.rotateView__loader {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.rotateView__loader {
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+.rotateView__loader.loaded {
+  opacity: 0;
+}
+
+.rotateView__loader > img {
+  width: 80px;
+}
+
+.rotateView__photoList img:last-of-type {
+  position: relative;
+}
+
+@media screen and (max-width: 1399px) {
+  .rotateView__photoWrap img {
+    position: absolute;
+    width: 62vw;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .rotateView {
+    padding-right: 60px;
+  }
+  .rotateView__photoWrap img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rotateView {
+    padding-right: 0;
+  }
+}

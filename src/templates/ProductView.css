@@ -222,11 +222,26 @@
   cursor: pointer;
 }
 
+.rotateLink {
+  display: inline;
+  margin-left: 40px;
+  position: relative;
+  top: 5px;
+}
+
+.rotateLink a {
+  letter-spacing: 1px;
+  color: #000;
+}
+
 
 
 @media screen and (max-width: 1366px) {
   .productView__select {
     width: 380px;
+  }
+  .productImageControls {
+    right: 60px;
   }
   .productView__details {
     left: 60px;
@@ -270,6 +285,7 @@
     order: 2;
     align-self: flex-end;
     width: 100%;
+    margin-right: 60px;
   }
   .productImageControls button {
     width: 50%;
@@ -303,6 +319,10 @@
   .productView__mobileDesc {
     display: initial;
   }
+  .rotateLink {
+    margin-left: 10px;
+    top: 20px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -315,6 +335,9 @@
   }
   .productView__details p, .productView__details h2 {
     margin-bottom: 20px;
+  }
+  .productImageControls {
+    margin-right: 0;
   }
 }
 

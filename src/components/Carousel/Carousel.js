@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Carousel.css';
 
-import cover1 from '../../assets/hat1-comp.jpg';
+import cover1 from '../../assets/hat4-comp.jpg';
 import cover2 from '../../assets/hats-comp.jpg';
 import cover3 from '../../assets/hat2-comp.jpg';
 
@@ -41,6 +41,7 @@ export default class Carousel extends Component {
     }, CAROUSEL_TIMER)
   }
   componentDidMount() {
+    //if timeout isn't already set, set timeout
     if (!timeout) {
       timeout = setInterval(() => {
         this.setState({
@@ -51,6 +52,9 @@ export default class Carousel extends Component {
 
     this.nextImage = this.nextImage.bind(this);
     this.previousImage = this.previousImage.bind(this);
+  }
+  componentWillUnmount() {
+    clearInterval(timeout); //clear the interval whenever carousel is unmounted
   }
   render() {
     const { currentSlide, imageList } = this.state;

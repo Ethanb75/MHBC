@@ -114,8 +114,22 @@ export default class ProductView extends Component {
     });
   }
   render() {
+
     const { currentProductImage } = this.state;
     if (this.state.product) {
+      let show360Button = this.state.product.tags.map(tag => {
+        // if one of the tags are '360 view' then return a tag
+        if (tag.value === "360 view") {
+          return (
+            <div className="rotateLink">
+              <Link to={`${this.props.location.pathname}/360-view`}>360 view &rarr;</Link>
+            </div>
+          );
+        } else {
+          return null;
+        }
+      })
+
       let variantImage = this.state.selectedVariantImage || this.state.product.images[currentProductImage];
       let variant = this.state.selectedVariant || this.state.product.variants[0];
       let variantQuantity = this.state.selectedVariantQuantity || 1;
@@ -158,10 +172,6 @@ export default class ProductView extends Component {
               <span>${variant.price}</span>
             </div>
             <div>
-              {/* <span>
-                <label>Quantity</label>
-                <input min="1" type="number" className="Product__option" defaultValue={variantQuantity} onChange={ev => this.handleQuantityChange(ev)}></input>
-              </span> */}
               <button onClick={ev => {
                 let start;
                 this.props.addVariantToCart(variant.id, variantQuantity);
@@ -187,6 +197,7 @@ export default class ProductView extends Component {
             {/* buttons to manually select photo, number of button based on arr */}
             <div className="productView__imageSelect">
               {productImageSelectButtons}
+              {show360Button}
             </div>
           </div>
 

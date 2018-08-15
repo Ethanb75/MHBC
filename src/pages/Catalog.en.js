@@ -11,8 +11,6 @@ import Carousel from '../components/Carousel/Carousel';
 import 'semantic-ui-css/semantic.min.css';
 import '../assets/catalog.css';
 
-import heading from '../assets/catalogHeader.jpeg';
-
 
 // example:
 // activeFilters = ['home collection', '']
