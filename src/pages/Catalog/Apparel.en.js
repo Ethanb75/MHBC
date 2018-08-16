@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import { Accordion, Icon, Dropdown } from 'semantic-ui-react';
+import { Accordion, Icon, Label } from 'semantic-ui-react';
 import Helmet from 'react-helmet'
 
 
-import Products from '../components/Products';
-import Footer from '../components/Footer/Footer';
-import Carousel from '../components/Carousel/Carousel';
+import Products from '../../components/Products';
+import Footer from '../../components/Footer/Footer';
+import Carousel from '../../components/Carousel/Carousel';
 
 import 'semantic-ui-css/semantic.min.css';
-import '../assets/catalog.css';
+import '../../assets/catalog.css';
 
 
 // example:
 // activeFilters = ['home collection', '']
 
-export default class Catalog extends Component {
+export default class Apparel extends Component {
   state = {
     filteredProducts: undefined,
-    activeFilters: [],
-    filterIndex: 0,
-    activeFilterIndex: -1
+    noSearchResults: false
   }
 
   handleFilterClick = (e, titleProps) => {
@@ -32,17 +30,29 @@ export default class Catalog extends Component {
   }
 
   filterProductsByType(productType) {
+    let filtered = [];
     // add the loading css
-    return this.props.client.product.fetchQuery({ sortKey: 'PRODUCT_TYPE', query: productType }).then((products) => {
-      //remove the loading css
-      this.setState({
-        filteredProducts: products
-      })
+    this.props.client.product.fetchAll().then(products => {
+      // fetch all products and filter by productType
+      products.forEach(product => {
+        if (product.productType === productType) {
+          filtered.push(product);
+        };
+      });
+
+      // if the length is greater than 0, add the products, else set noSearchResults to true
+      if (filtered.length > 0) {
+        this.setState({ filteredProducts: filtered });
+      } else {
+        this.setState({
+          noSearchResults: true
+        });
+      };
     });
   }
 
   componentDidMount() {
-    //TODO: re- fetch products after every load
+    this.filterProductsByType('Apparel');
 
     // add different page style
     document.querySelector('.footer__links').classList.add('catalog');
@@ -54,7 +64,6 @@ export default class Catalog extends Component {
   }
 
   render() {
-    let typeOptions = [];
     //find all the product types and filter to remove duplicates
     let productTypes = this.props.products
       .map(product => {
@@ -64,10 +73,10 @@ export default class Catalog extends Component {
       .map(type => {
         return (
           <li key={type}>
-            <Link to={`${window.location.pathname}/${type}`}>{type}</Link>
+            <Link to={`/en/Catalog/${type}`}>{type}</Link>
           </li>
         )
-      });
+    });
 
     // let collections = this.props.collections.map(collection => {
     //   return (
@@ -81,9 +90,9 @@ export default class Catalog extends Component {
     return (
       <div>
         <Helmet
-          title="Mile High Boys Club | Catalog"
+          title="Mile High Boys Club | Catalog | Apparel"
           meta={[
-            { name: 'description', content: 'Mile High Boys Club official website and merch store. Browse our catalog' },
+            { name: 'description', content: 'Mile High Boys Club official website and merch store. Apparel Catalog Page.' },
             { name: 'keywords', content: 'Mile High Boys Club, MHBC, MHBC Fashion, fashion' },
           ]}
         />
@@ -91,9 +100,9 @@ export default class Catalog extends Component {
           <div>
             <Carousel />
             <div className="catalogHeader__text">
-              <h1>Catalog</h1>
+              <h1>Apparel</h1>
               <p>
-                All products in our exclusive collection
+                All clothing in our exclusive collection
               </p>
             </div>
           </div>
@@ -101,10 +110,10 @@ export default class Catalog extends Component {
         <div className="catalogCategory">
           <h2>
             <span>
-              <Link to="/">Home</Link> &rarr; Catalog
+              <Link to="/">Home</Link> &rarr; <Link to="/en/Catalog">Catalog</Link> &rarr; Apparel
             </span>
             <div>
-              {this.props.products.length} results
+              {this.state.filteredProducts ? this.state.filteredProducts.length : 0} results
               <span></span>
             </div>
           </h2>
@@ -127,11 +136,13 @@ export default class Catalog extends Component {
               </Accordion>
             </div>
           </div>
+
           {/* if filtered is full, render that, if not render all products */}
           <Products
-            products={this.state.filteredProducts ? this.state.filteredProducts : this.props.products}
+            products={this.state.filteredProducts}
             client={this.props.client}
             addVariantToCart={this.addVariantToCart}
+            noProductsFound={this.state.noSearchResults}
           />
         </main>
 

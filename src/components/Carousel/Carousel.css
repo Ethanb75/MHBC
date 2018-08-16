@@ -51,6 +51,9 @@
   .carouselWrap {
     align-items: center;
   }
+  .carousel__controls button {
+    padding: 10px 20px;
+  }
   .carouselWrap > img {
     width: 100%;
   }

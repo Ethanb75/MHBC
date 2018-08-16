@@ -65,7 +65,7 @@ export default class Header extends Component {
               </Link>
             </li>
             <li className="topBar__link">
-              <Link to="/Culture" activeClassName="active">
+              <Link to="/en/Culture" activeClassName="active">
                 Culture
               </Link>
             </li>

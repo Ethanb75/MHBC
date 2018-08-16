@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Helmet from 'react-helmet';
+import Link from 'gatsby-link';
 
 import './View360.css';
 
 import loader from '../assets/loading.svg';
 
 
-// %3D === '='
-// https://res.cloudinary.com/diorhtnjt/image/upload/v1534182289/MHBC/360%20Photos/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzE3OTkwNjU4OTQ5NzA%3D/8.jpg
 const TOTAL_IMAGE_LENGTH = 35;
 const BASE_URL = 'https://res.cloudinary.com/diorhtnjt/image/upload/v1534182289/MHBC/360%20Photos/'
 
@@ -64,15 +63,19 @@ export default class View360 extends Component {
           src={image}
           onLoad={() => this.setState({ loadedImages: this.state.loadedImages + 1 })}
         />
-      )
-    })
-
+      );
+    });
 
     return (
       <div className="rotateView">
         <Helmet
           title="360 view"
         />
+        <div className="productView__return rotateView__return">
+          <Link to={this.props.location.pathname.replace('/360-view', '')}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          </Link>
+        </div>
         <div className="rotateView__title">
           <h2>{this.state.product ? this.state.product.title : 'loading...'}</h2>
         </div>

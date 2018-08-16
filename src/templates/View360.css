@@ -61,6 +61,10 @@
   position: relative;
 }
 
+.rotateView__return {
+  left: 180px;
+}
+
 @media screen and (max-width: 1399px) {
   .rotateView__photoWrap img {
     position: absolute;

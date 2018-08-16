@@ -62,6 +62,7 @@ export default class Carousel extends Component {
       return (
         <img
           src={imageSrc}
+          key={index}
           style={currentSlide === index ? { opacity: 1 } : {}}
           alt=""
         />

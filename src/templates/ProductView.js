@@ -186,7 +186,7 @@ export default class ProductView extends Component {
           {/* Productview image background image, if there isn't an image use the mock */}
           <div
             className="productView__image"
-            style={this.state.product.images.length ? { backgroundImage: `url(${mockProduct && variantImage.src})`, animation: 'loadedImage 1s ease .2s forwards' } : { backgroundImage: `url(${mockProduct})` }}
+            style={this.state.product.images.length ? { backgroundImage: `url(${mockProduct && variantImage.src})` } : { backgroundImage: `url(${mockProduct})` }}
           >
             <div className="productView__return">
               <Link to="/en/Catalog">
