@@ -105,7 +105,7 @@ export default class IndexPage extends Component {
           <div className="featured">
             <span>featured</span>
             <Link to="/en/Catalog">Stylin Jacket <span>&rarr;</span></Link>
-            <img src="https://cdn.shopify.com/s/files/1/0141/0855/7370/products/pre_launch_bold.jpg?v=1531414253" />
+            {/* <img src="https://cdn.shopify.com/s/files/1/0141/0855/7370/products/pre_launch_bold.jpg?v=1531414253" /> */}
           </div>
           <div className="background">
             {/* have a few slides and add the css class witht he animation after the prev. animation is complete */}

@@ -80,6 +80,9 @@
   .rotateView__photoWrap img {
     width: 100%;
   }
+  .rotateView__return {
+    left: 10px;
+  }
 }
 @media screen and (max-width: 600px) {
   .rotateView {
