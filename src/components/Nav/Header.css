@@ -258,7 +258,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   margin-left: 40px;
 }
 
-.menu li a {
+.menu li a, .menu li span {
   font-size: 1.96em;
   font-weight: 900;
   text-transform: uppercase;
@@ -267,13 +267,14 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   padding-left: 20px;
   display: block;
   transition: all .2s ease-out;
+  cursor: pointer;
 }
 
-.menu li a:hover {
+.menu li a:hover, .menu li span:hover {
   transform: translateX(20px);
 }
 
-.menu li a::before {
+.menu li a::before, .menu li span::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -284,7 +285,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   transition: all .2s ease-out;
 }
 
-.menu li a:hover::before {
+.menu li a:hover::before, .menu li span:hover::before {
   width: 80px;
 }
 

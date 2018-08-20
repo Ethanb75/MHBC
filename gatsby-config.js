@@ -38,6 +38,14 @@ module.exports = {
         useLangKeyLayout: true
       }
     },
-
-  ],
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#84754E`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+  ]
 }

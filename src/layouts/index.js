@@ -157,6 +157,7 @@ class TemplateWrapper extends Component {
               removeLineItemInCart,
               handleCartClose,
               filterProductsByType,
+              isCartOpen,
               client,
               checkout,
               collections,

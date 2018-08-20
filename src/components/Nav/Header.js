@@ -86,7 +86,12 @@ export default class Header extends Component {
                 <Link to="/en/Culture" onClick={() => this.toggleNav()} activeClassName="active">Culture</Link>
               </li>
               <li>
-                <Link to="/en/Cart" onClick={() => this.toggleNav()} activeClassName="active">Cart</Link>
+                <span onClick={() => {
+                  if (!this.props.isCartOpen) this.props.toggleCart();
+                  this.toggleNav();
+                }}>
+                  Cart
+                </span>
               </li>
             </ul>
             <ul>

@@ -314,7 +314,11 @@
 }
 
 @media screen and (max-width: 450px) {
+  /* 2.744em */
   .productView__details {
     width: 100%;
+  }
+  .productView__details h2, .productView__mobileDesc h2 {
+    font-size: 2.744em;
   }
 }
