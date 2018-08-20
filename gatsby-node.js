@@ -11,6 +11,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           node {
             id
             handle
+            title
           }
         }
       }
@@ -18,7 +19,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   `)
 
   // programatically create all the product view pages for each product
-  pages.data.allShopifyProduct.edges.forEach(edge => {
+  pages.data.allShopifyProduct.edges.forEach((edge, i) => {
     createPage({
       path: `/en/Catalog/${edge.node.handle}/${edge.node.id.replace('Shopify__Product__', '')}`,
       component: path.resolve('./src/templates/ProductView.js'),
