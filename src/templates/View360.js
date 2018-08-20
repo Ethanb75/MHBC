@@ -8,7 +8,8 @@ import loader from '../assets/loading.svg';
 
 
 const TOTAL_IMAGE_LENGTH = 35;
-const BASE_URL = 'https://res.cloudinary.com/diorhtnjt/image/upload/v1534182289/MHBC/360%20Photos/'
+// const BASE_URL = 'https://res.cloudinary.com/diorhtnjt/image/upload/v1534182289/MHBC/360%20Photos/'
+const BASE_URL = 'https://res.cloudinary.com/diorhtnjt/image/upload/v1534782717/MHBC/360%20Photos/'
 
 
 
@@ -29,15 +30,24 @@ export default class View360 extends Component {
     const imageURLs = [];
     const productID = this.props.pathContext.id.replace('Shopify__Product__', '');
 
+    console.log(productID);
+
     this.changeImagesWithSlide = this.changeImagesWithSlide.bind(this);
 
-    for (let i = 0; i < TOTAL_IMAGE_LENGTH; i++) {
-      imageURLs.push(`${BASE_URL}${productID.replace('=', '%3D')}/${i + 1}.jpg`);
+
+    // NEED TO FIX THIS, SPECIAL CASE FOR THE ONE HAT WITH 32 PICTURES INSTEAD OF 35
+    if (productID === 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzE4MDcyMDE0MDI5Mzg=') {
+      for (let i = 0; i < 32; i++) {
+        imageURLs.push(`${BASE_URL}${productID.replace('=', '%3D')}/${i + 1}.jpg`);
+      }
+    } else {
+      for (let i = 0; i < TOTAL_IMAGE_LENGTH; i++) {
+        imageURLs.push(`${BASE_URL}${productID.replace('=', '%3D')}/${i + 1}.jpg`);
+      }
     }
 
+
     this.setState({ imageURLs })
-
-
 
     if (this.state.product) {
       this.state.product.options.forEach((selector) => {
@@ -54,6 +64,9 @@ export default class View360 extends Component {
   render() {
     const { photoInView, imageURLs } = this.state;
     const allImagesLoaded = imageURLs.length === this.state.loadedImages;
+
+    console.log(imageURLs);
+
     const rotateImages = imageURLs.map((image, index) => {
       return (
         <img
@@ -95,7 +108,7 @@ export default class View360 extends Component {
             type="range"
             min="1"
             //needs to be the number of photos
-            max="34"
+            max={imageURLs.length}
             step="1"
             defaultValue="1"
             onChange={this.changeImagesWithSlide}
