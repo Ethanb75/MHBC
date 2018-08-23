@@ -192,6 +192,23 @@ export default class IndexPage extends Component {
           </div>
 
 
+          <div className="productCaller">
+            <Link>
+              <div className="productCaller__back"></div>
+              <div className="productCaller__title">
+                <h3>Apparel</h3>
+                <button>Browse Apparel<span>→</span></button>
+              </div>
+            </Link>
+            <Link>
+              <div className="productCaller__back"></div>
+              <div className="productCaller__title">
+                <h3>Accessories</h3>
+                <button>Browse Accessories<span>→</span></button>
+              </div>
+            </Link>
+          </div>
+
           <div id="caller">
             <div>
               <h2>Join our mailing list to stay up to date on new releases</h2>

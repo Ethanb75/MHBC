@@ -60,6 +60,11 @@ export default class View360 extends Component {
         })
       });
     }
+
+    //add light style to nav
+    document.querySelector('.sideBar__btn').classList.add('catalog');
+    document.querySelector('.sideBar').classList.add('catalog');
+    document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'));
   }
   render() {
     const { photoInView, imageURLs } = this.state;
