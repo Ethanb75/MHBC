@@ -595,6 +595,20 @@ p.culture__more {
   margin-right: 40px;
 }
 
+.productCaller__title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.1)
+}
+
 .productCaller__title button {
   background-color: var(--gold);
   border: none;
@@ -642,17 +656,6 @@ p.culture__more {
 
 .productCaller > a:hover h3 {
   color: var(--gold);
-}
-
-.productCaller__title {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: rgba(0,0,0,.1)
 }
 
 .productCaller__title h3 {
