@@ -104,7 +104,7 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
 }
 
 .sideBar.catalog {
-  background-color: #0d0d0d; 
+  background-color: black; 
 }
 
 .topBar__lang ul {

@@ -46,6 +46,7 @@ export default class Catalog extends Component {
 
     // add different page style
     document.querySelector('.footer__links').classList.add('catalog');
+    document.querySelector('.footer__quote').classList.add('catalog');
     document.querySelector('.sideBar').classList.add('catalog');
     document.querySelector('.sideBar__btn').classList.add('catalog');
     document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'));
@@ -68,14 +69,6 @@ export default class Catalog extends Component {
           </li>
         )
       });
-
-    // let collections = this.props.collections.map(collection => {
-    //   return (
-    //     <li key={collection.title}>
-    //       {collection.title}
-    //     </li>
-    //   )
-    // });
 
     const { activeFilterIndex } = this.state;
     return (

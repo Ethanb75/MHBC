@@ -39,6 +39,10 @@
   background-color: #f7f8f9;
 }
 
+.footer__quote.catalog {
+  background-color: black;
+}
+
 .footer__links ul {
   margin: 0;
 }
