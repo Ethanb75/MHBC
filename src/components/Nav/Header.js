@@ -4,7 +4,8 @@ import SelectLanguage from '../SelectLanguage';
 
 import './Header.css';
 
-import logo from '../../assets/logo-blk.png';
+import logo from '../../assets/logo-wht.png';
+import logoMobile from '../../assets/logo-blk.png';
 
 
 // import client from '../../shopify';
@@ -52,7 +53,7 @@ export default class Header extends Component {
         <div className="topBar">
           <h1 className="topBar__logo">
             <Link to="/">
-              <img src={logo} />
+              {window.innerWidth <= 600 ? <img src={logoMobile} /> : <img src={logo} />}
             </Link>
           </h1>
           <ul>

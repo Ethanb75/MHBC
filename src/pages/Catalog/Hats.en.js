@@ -101,9 +101,6 @@ export default class Apparel extends Component {
             <Carousel />
             <div className="catalogHeader__text">
               <h1>Hats</h1>
-              <p>
-                All Hats in our exclusive collection
-              </p>
             </div>
           </div>
         </header>

@@ -17,6 +17,8 @@ import MHBC4 from '../assets/chris.jpg';
 import twan from '../assets/twan-da-god.jpg';
 import stickers from '../assets/stickers.jpg';
 import designer from '../assets/designer.png';
+import logoWht from '../assets/logo-wht.png';
+import logoBlk from '../assets/logo-blk.png';
 
 //slides
 
@@ -49,6 +51,7 @@ export default class IndexPage extends Component {
   }
   componentDidMount() {
 
+    if (window.innerWidth >= 600) document.querySelector('.topBar__logo img').src = logoBlk;
 
     if (document.querySelector('.sideBar').classList.contains('catalog')) {
       document.querySelector('.footer__links').classList.remove('catalog');
@@ -63,6 +66,9 @@ export default class IndexPage extends Component {
     this.props.handleCartClose();
   }
   componentWillUnmount() {
+
+    if (window.innerWidth >= 600) document.querySelector('.topBar__logo img').src = logoWht;
+
     document.querySelector('.sideBar__cart svg').style.stroke = '';
     document.querySelector('.sideBar__cart button span').style.color = '';
   }
@@ -105,7 +111,6 @@ export default class IndexPage extends Component {
           <div className="featured">
             <span>featured</span>
             <Link to="/en/Catalog">Stylin Jacket <span>&rarr;</span></Link>
-            {/* <img src="https://cdn.shopify.com/s/files/1/0141/0855/7370/products/pre_launch_bold.jpg?v=1531414253" /> */}
           </div>
           <div className="background">
             {/* have a few slides and add the css class witht he animation after the prev. animation is complete */}

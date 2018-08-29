@@ -30,7 +30,7 @@
 .topBar__logo {
   margin: 0;
   padding: 30px;
-  background-color: var(--black);
+  /* background-color: var(--black); */
   z-index: 15;
 }
 
@@ -294,3 +294,8 @@ li.topBar__link a:hover::before, li.topBar__link a.catalog:hover::before, li.top
   pointer-events: initial;
 }
 
+@media screen and (max-width: 600px) {
+  .topBar__logo {
+    background-color: black;
+  }
+}

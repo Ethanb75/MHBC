@@ -3,6 +3,8 @@ import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 
 import VariantSelector from '../components/VariantSelector';
+import logoWht from '../assets/logo-wht.png';
+import logoBlk from '../assets/logo-blk.png';
 
 import './ProductView.css';
 
@@ -61,12 +63,19 @@ export default class ProductView extends Component {
       });
     }
 
+
+    // page specific style
+    document.querySelector('.topBar__logo img').src = logoBlk;
     document.querySelector('.sideBar__btn').classList.add('catalog');
     document.querySelector('.sideBar').classList.add('catalog');
     document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'));
 
 
     //image loaded handlers
+  }
+
+  componentWillUnmount() {
+    document.querySelector('.topBar__logo img').src = logoWht;
   }
 
   findImage(images, variantId) {

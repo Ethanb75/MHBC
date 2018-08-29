@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import { Accordion, Icon, Dropdown } from 'semantic-ui-react';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
+
+// import logoWhite from '../../assets/logo-wht.png';
 
 
 import Products from '../components/Products';
@@ -85,9 +87,9 @@ export default class Catalog extends Component {
             <Carousel />
             <div className="catalogHeader__text">
               <h1>Catalog</h1>
-              <p>
+              {/* <p>
                 All products in our exclusive collection
-              </p>
+              </p> */}
             </div>
           </div>
         </header>
@@ -102,7 +104,6 @@ export default class Catalog extends Component {
             </div>
           </h2>
         </div>
-        {/* {!this.state.isCartOpen && <button onClick={() => this.setState({ isCartOpen: true })}>Open Cart</button>} */}
         <main id="catalogMain">
           <div className="catalogFilter">
             <div className="filter">
@@ -110,7 +111,6 @@ export default class Catalog extends Component {
                 <Accordion.Title active={activeFilterIndex === 1} index={1} onClick={this.handleFilterClick}>
                   <label>Filter By</label>
                   <Icon name='dropdown' />
-                  {/* <span>Product Type</span> */}
                 </Accordion.Title>
                 <Accordion.Content active={activeFilterIndex === 1}>
                   <ul>

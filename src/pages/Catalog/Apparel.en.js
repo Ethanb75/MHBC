@@ -76,7 +76,7 @@ export default class Apparel extends Component {
             <Link to={`/en/Catalog/${type}`}>{type}</Link>
           </li>
         )
-    });
+      });
 
     // let collections = this.props.collections.map(collection => {
     //   return (
@@ -101,9 +101,6 @@ export default class Apparel extends Component {
             <Carousel />
             <div className="catalogHeader__text">
               <h1>Apparel</h1>
-              <p>
-                All clothing in our exclusive collection
-              </p>
             </div>
           </div>
         </header>
