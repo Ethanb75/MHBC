@@ -48,12 +48,14 @@ export default class Header extends Component {
   render() {
     const { isNavOpen } = this.state;
 
+    const width = window.innerWidth;
+
     return (
       <div className="nav">
         <div className="topBar">
           <h1 className="topBar__logo">
             <Link to="/">
-              {window.innerWidth <= 600 ? <img src={logoMobile} /> : <img src={logo} />}
+              {width <= 600 ? <img src={logoMobile} /> : <img src={logo} />}
             </Link>
           </h1>
           <ul>
