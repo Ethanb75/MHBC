@@ -14,7 +14,8 @@ import Cart from '../Cart/Cart';
 export default class Header extends Component {
   state = {
     isNavOpen: false,
-    cartItems: 0
+    cartItems: 0,
+    screenWidth: undefined
   }
 
   componentDidMount() {
@@ -24,6 +25,7 @@ export default class Header extends Component {
     //     this.setState({ cartItems: checkout.attrs.lineItems.length })
     //   });
     // }
+    this.setState({ screenWidth: window.innerWidth });
   }
   toggleNav() {
     this.setState({ isNavOpen: !this.state.isNavOpen });
@@ -46,16 +48,14 @@ export default class Header extends Component {
   }
 
   render() {
-    const { isNavOpen } = this.state;
-
-    const width = window.innerWidth;
+    const { isNavOpen, screenWidth } = this.state;
 
     return (
       <div className="nav">
         <div className="topBar">
           <h1 className="topBar__logo">
             <Link to="/">
-              {width <= 600 ? <img src={logoMobile} /> : <img src={logo} />}
+              {screenWidth <= 600 ? <img src={logoMobile} /> : <img src={logo} />}
             </Link>
           </h1>
           <ul>
