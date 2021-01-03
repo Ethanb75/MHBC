@@ -1,0 +1,16 @@
+{
+    "products": {
+        "hats": {
+            "Flight Line": {
+                "variants": {
+                    "Black": {"color": "Black", "hex": ""},
+                    "Blue": {"color": "Blue", "hex": ""},
+                    "Red": {"color": "Red", "hex": ""},
+                    "White": {"color": "White", "hex": ""},
+                    "Orange Camo": {"color": "Orange Camo", "hex": ""},
+                    "Red Camo": {"color": "Red Camo", "hex": ""}
+                }
+            }
+        }
+    }
+}

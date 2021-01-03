@@ -44,20 +44,24 @@ export default class Culture extends Component {
               </h2>
             </div>
             <div className="right">
-              <p>
+              {/* <p>
                 MHBC was formed in atlanta in 2016 as a record label. The artists and management
                 colluded based on the idea that you can achieve anything you set your mind to.
                 Though their mantra, the record label was successful and produced hits listened to
                 by millions.
+              </p> */}
+              <p>
+                'it all starts with an idea'. You can achieve whatever you set your mind to. Milehighboysclub (MHBC) was 
+                established in Atlanta, GA in 2010. A mark of excellence. A multi-cultural and global brand that has no 
+                boundaries or limitations.
               </p>
               <p>
                 The CEO, Chris Thompson (Mr. P), also believed that how you present yourself
-                speaks miles. By thinking and acting like a successful person, you can achieve
-                success. Sadly however, the fashion industry was absent of a company that represented
+                speaks miles. Sadly however, the fashion industry was absent of a company that represented
                 that theme. It seemed there were brands catered to the wealthy and the nons, no brands
                 spoke to the creators, go-getters, and innovators; people who were wealthy but still
                 striving to reach higher. With this in mind he decided to brand Mile high boys club
-                and take on the fashion industry.
+                and take on the fashion industry. "Aim high fly high"
               </p>
             </div>
           </section>

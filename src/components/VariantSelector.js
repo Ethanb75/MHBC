@@ -12,27 +12,46 @@ const options = [
 
 
 export default class VariantSelector extends Component {
+  
   render() {
+    console.log(this.props.option)
     // if no variations for a product, the default returns 'Title'
     if (this.props.option.name === 'Title') {
       return null;
     } else {
+      // return (
+      //   <div>
+      //     <label>{this.props.option.name}</label>
+          // <select
+          //   className="Product__option"
+          //   name={this.props.option.name}
+          //   key={this.props.option.name}
+          //   onChange={this.props.handleOptionChange}
+          // >
+      //       {this.props.option.values.map((value) => {
+      //         return (
+      //           <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
+      //         )
+      //       })}
+      //     </select>
+      //   </div>
+      // );
       return (
-        <div>
-          <label>{this.props.option.name}</label>
-          <select
+        <select
             className="Product__option"
             name={this.props.option.name}
             key={this.props.option.name}
             onChange={this.props.handleOptionChange}
           >
             {this.props.option.values.map((value) => {
+              // return (
+              //   <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
+              // )
               return (
                 <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
               )
             })}
-          </select>
-        </div>
+        </select>
       );
     }
   }

@@ -174,7 +174,7 @@ export default class ProductView extends Component {
             ]}
           />
           <div className="productView__select">
-            {variantSelectors}
+            {/* {variantSelectors} */}
             <div className="productView__mobileDesc">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>

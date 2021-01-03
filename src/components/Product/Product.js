@@ -67,7 +67,7 @@ export default class Product extends Component {
       <div className="productWrap">
         <div className="product">
           <Link to={`/en/Catalog/${this.props.product.handle}/${this.props.product.id}`}>
-            {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`} /> : null}
+            {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title}`} /> : null}
             <h5>{this.props.product.title}</h5>
             <span>${variant.price}</span>
           </Link>
