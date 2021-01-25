@@ -95,9 +95,13 @@ export default class ProductView extends Component {
 
     const selectedVariant = this.props.client.product.helpers.variantForOptions(this.state.product, selectedOptions)
 
+    // after option change, switch to image index
+    let optionIndex = this.state.product.images.findIndex(el => el.id === selectedVariant.attrs.image.id);
+
     this.setState({
       selectedVariant: selectedVariant,
-      selectedVariantImage: selectedVariant.attrs.image
+      selectedVariantImage: selectedVariant.attrs.image,
+      currentProductImage: optionIndex
     });
   }
 
@@ -126,6 +130,7 @@ export default class ProductView extends Component {
 
     const { currentProductImage } = this.state;
     if (this.state.product) {
+      // console.log(this.state.product)
       let show360Button = this.state.product.tags.map(tag => {
         // if one of the tags are '360 view' then return a tag
         if (tag.value === "360 view") {
@@ -139,7 +144,7 @@ export default class ProductView extends Component {
         }
       })
 
-      let variantImage = this.state.selectedVariantImage || this.state.product.images[currentProductImage];
+      let variantImage = this.state.product.images[currentProductImage];
       let variant = this.state.selectedVariant || this.state.product.variants[0];
       let variantQuantity = this.state.selectedVariantQuantity || 1;
       let variantSelectors = this.state.product.options.map((option) => {
@@ -148,9 +153,16 @@ export default class ProductView extends Component {
             handleOptionChange={ev => this.handleOptionChange(ev)}
             key={option.id.toString()}
             option={option}
+            variant={variant}
           />
         );
       });
+
+      // console.log('variant', variant)
+      // console.log('product', this.state.product)
+      console.log('all images: ', this.state.product.images)
+      console.log('selected variant', this.state.selectedVariant)
+      console.log('selected variant image', this.state.selectedVariantImage)
 
       let productImageSelectButtons = this.state.product.images.map((image, index) => {
         return (
@@ -174,7 +186,7 @@ export default class ProductView extends Component {
             ]}
           />
           <div className="productView__select">
-            {/* {variantSelectors} */}
+            {variantSelectors}
             <div className="productView__mobileDesc">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>

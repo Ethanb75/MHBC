@@ -146,6 +146,23 @@
 .Product__option {
   width: 100%;
   padding: 10px;
+  display: flex;
+}
+
+.colorSelect[type="radio"] {
+  display: none;
+}
+
+.colorSelect__color {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: wheat;
+  margin-right: 1rem;
+}
+
+.colorSelect[type="radio"]:checked + .colorSelect__color {
+  background-color: red;
 }
 
 

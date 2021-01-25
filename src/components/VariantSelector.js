@@ -12,46 +12,65 @@ const options = [
 
 
 export default class VariantSelector extends Component {
-  
+  state = {
+    selectedOption: ""
+  }
+  changeSelectedVariant(val) {
+    this.setState({ selectedOption: val })
+  } 
   render() {
-    console.log(this.props.option)
+    console.log(this.props)
     // if no variations for a product, the default returns 'Title'
     if (this.props.option.name === 'Title') {
       return null;
     } else {
       // return (
-      //   <div>
-      //     <label>{this.props.option.name}</label>
-          // <select
-          //   className="Product__option"
-          //   name={this.props.option.name}
-          //   key={this.props.option.name}
-          //   onChange={this.props.handleOptionChange}
-          // >
+      //   <select
+      //       className="Product__option"
+      //       name={this.props.option.name}
+      //       key={this.props.option.name}
+      //       onChange={this.props.handleOptionChange}
+      //     >
       //       {this.props.option.values.map((value) => {
+      //         // return (
+      //         //   <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
+      //         // )
       //         return (
       //           <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
       //         )
       //       })}
-      //     </select>
-      //   </div>
+      //   </select>
       // );
+
+      // new
       return (
-        <select
+        <div
             className="Product__option"
-            name={this.props.option.name}
-            key={this.props.option.name}
-            onChange={this.props.handleOptionChange}
           >
             {this.props.option.values.map((value) => {
               // return (
               //   <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
               // )
               return (
-                <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
+                <div key={`${value}`}>
+                  
+                  <label style={{color: "white"}} for={`${value}`}>
+                    {/* {`${value}`} */}
+                    <input 
+                      type="radio" 
+                      className="colorSelect"
+                      id={`${value}`} 
+                      name={this.props.option.name} 
+                      value={`${value}`}
+                      onChange={this.props.handleOptionChange}
+                      checked={this.props.variant.title === value.value}
+                    />
+                    <span className={`colorSelect__color colorSelect__color--${value}`}></span>
+                  </label>
+                </div>
               )
             })}
-        </select>
+        </div>
       );
     }
   }
