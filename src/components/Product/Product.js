@@ -60,6 +60,7 @@ export default class Product extends Component {
           handleOptionChange={this.handleOptionChange}
           key={option.id.toString()}
           option={option}
+          title={this.props.product.title}
         />
       );
     });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import productMetaData from "../data/productInformation/available-colors.json"
 // import 'semantic-ui-css/semantic.min.css';
 
 
@@ -19,28 +19,12 @@ export default class VariantSelector extends Component {
     this.setState({ selectedOption: val })
   } 
   render() {
-    console.log(this.props)
+    console.log('variant sel props', this.props)
     // if no variations for a product, the default returns 'Title'
-    if (this.props.option.name === 'Title') {
-      return null;
-    } else {
-      // return (
-      //   <select
-      //       className="Product__option"
-      //       name={this.props.option.name}
-      //       key={this.props.option.name}
-      //       onChange={this.props.handleOptionChange}
-      //     >
-      //       {this.props.option.values.map((value) => {
-      //         // return (
-      //         //   <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
-      //         // )
-      //         return (
-      //           <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
-      //         )
-      //       })}
-      //   </select>
-      // );
+    if(this.props.option.name === 'Color') {
+      const colorData = productMetaData.products[`${this.props.type}`][`${this.props.title}`].variants;
+
+      console.log(colorData)
 
       // new
       return (
@@ -65,13 +49,20 @@ export default class VariantSelector extends Component {
                       onChange={this.props.handleOptionChange}
                       checked={this.props.variant.title === value.value}
                     />
-                    <span className={`colorSelect__color colorSelect__color--${value}`}></span>
+                    <span className={`colorSelect__color colorSelect__color--${value}`}>
+                      <span style={{
+                        backgroundColor: colorData[`${value}`].hex
+                        // backgroundColor: "blue"
+                      }}></span>
+                    </span>
                   </label>
                 </div>
               )
             })}
         </div>
       );
+    } else {
+      return null
     }
   }
 }

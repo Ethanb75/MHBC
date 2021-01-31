@@ -154,6 +154,8 @@ export default class ProductView extends Component {
             key={option.id.toString()}
             option={option}
             variant={variant}
+            title={this.state.product.title}
+            type={this.state.product.productType}
           />
         );
       });
@@ -163,6 +165,7 @@ export default class ProductView extends Component {
       console.log('all images: ', this.state.product.images)
       console.log('selected variant', this.state.selectedVariant)
       console.log('selected variant image', this.state.selectedVariantImage)
+      console.log(this.state.product.productType)
 
       let productImageSelectButtons = this.state.product.images.map((image, index) => {
         return (
@@ -186,10 +189,10 @@ export default class ProductView extends Component {
             ]}
           />
           <div className="productView__select">
-            {variantSelectors}
             <div className="productView__mobileDesc">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>
+              {variantSelectors}
               <span>${variant.price}</span>
             </div>
             <div>
