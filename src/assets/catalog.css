@@ -2,9 +2,8 @@
   --col: calc(100vw / 8);
   --white: #fff;
   --black: #000;
-  --gold: #84754E;
+  --gold: #84754e;
 }
-
 
 /* catalog header ----------------------------------------------------------------------------- */
 
@@ -34,7 +33,7 @@
   font-size: 3.375em;
   font-weight: 900;
   margin: 0;
-  color: #0D0D0D;
+  color: #0d0d0d;
   text-transform: uppercase;
   flex-grow: 1;
 }
@@ -52,7 +51,7 @@
 }
 
 .catalogHeader__imgWrap::before {
-  content: '';
+  content: "";
   background-color: var(--gold);
   position: absolute;
   top: 20px;
@@ -62,7 +61,23 @@
   height: 100%;
 }
 
+.catalogHeaderContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* margin-right: 40px; */
+}
 
+/* .catalogHeaderContent > img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: opacity 0.5s ease;
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+} */
 
 /* catalog main ------------------------------------------------------------------------------- */
 
@@ -76,19 +91,19 @@
 }
 
 .catalogCategory a {
-  color: #0D0D0D66;
+  color: #0d0d0d66;
 }
 
 .catalogCategory h2 {
   margin-bottom: 0px;
   padding-bottom: 10px;
   font-size: 1em;
-  color: #0D0D0D66; 
+  color: #0d0d0d66;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
   /* font-size: .714em; */
-  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
+  font-family: "Erbar AT Condensed", Helvetica, Arial, sans-serif;
 }
 
 .catalogCategory h2 > div {
@@ -158,7 +173,7 @@
   padding: 10px 0;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
+  font-family: "Erbar AT Condensed", Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: space-between;
 }
@@ -188,7 +203,6 @@
     margin: 80px calc(12.5vw + 0px) 0px 12.5vw;
   }
 }
-
 
 @media screen and (max-width: 1024px) {
   .filter {
@@ -224,12 +238,12 @@
   }
   .catalogCategory h2 {
     padding-bottom: 0;
-    text-align: center
+    text-align: center;
   }
   .filter {
     padding: 20px;
     margin-top: 0;
-    color: #0D0d0d;
+    color: #0d0d0d;
     background-color: white;
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #f3f3f3;
@@ -302,7 +316,6 @@
     width: 100%;
     max-width: 100%;
   }
-  
 }
 
 @media screen and (max-width: 360px) {
