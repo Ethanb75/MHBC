@@ -1,36 +1,33 @@
-
-
 @font-face {
-  font-family: 'Big Caslon';
+  font-family: "Big Caslon";
   font-style: normal;
   font-weight: 500;
-  src: local('Big Caslon Medium'),
-       url('./fonts/BCM.woff2') format('woff2'),
-       url('./fonts/BCM.woff') format('woff'),
-       url('./fonts/BCM.ttf') format('truetype'); 
+  src: local("Big Caslon Medium"), url("./fonts/BCM.woff2") format("woff2"),
+    url("./fonts/BCM.woff") format("woff"),
+    url("./fonts/BCM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Erbar AT Condensed';
+  font-family: "Erbar AT Condensed";
   font-style: normal;
   font-weight: 300;
-  src: local('Erbar AT Condensed Light'),
-       url('./fonts/ErbarAtCdLtReg.woff2') format('woff2'),
-       url('./fonts/ErbarAtCdLtReg.woff') format('woff'),
-       url('./fonts/ErbarAtCdLtReg.ttf') format('truetype');
+  src: local("Erbar AT Condensed Light"),
+    url("./fonts/ErbarAtCdLtReg.woff2") format("woff2"),
+    url("./fonts/ErbarAtCdLtReg.woff") format("woff"),
+    url("./fonts/ErbarAtCdLtReg.ttf") format("truetype");
 }
-
 
 :root {
   --col: calc(100vw / 8);
   --white: #fff;
   --black: #000;
-  --gold: #84754E;
-  --lightWhite: #FFFCF5;
+  --gold: #84754e;
+  --lightWhite: #fffcf5;
 }
 
 /* hide default controls for number inputs  */
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -48,12 +45,16 @@ a:hover {
   color: var(--gold);
 }
 
-body h5, body h6, body input, body * {
-  font-family: 'Erbar AT Condensed', Helvetica, Arial, sans-serif;
+body h5,
+body h6,
+body input,
+body * {
+  font-family: "Erbar AT Condensed", Helvetica, Arial, sans-serif;
 }
 
-body h1, body h2 {
-  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
+body h1,
+body h2 {
+  font-family: "Big Caslon", Helvetica, Arial, sans-serif;
   line-height: initial;
 }
 
@@ -72,11 +73,15 @@ button {
 #indexHeader {
   height: 100vh;
   position: relative;
-  background: linear-gradient(to top, rgba(0, 0, 0, .9) 10%,rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 10%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 #indexHeader::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -101,29 +106,28 @@ button {
   color: var(--white);
   font-weight: 900;
   margin-bottom: 0;
-  line-height: .8;
+  line-height: 0.8;
   text-transform: uppercase;
   position: relative;
 }
 
 .header__title h1 span {
-  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
+  font-family: "Big Caslon", Helvetica, Arial, sans-serif;
   display: block;
   margin-bottom: 30px;
 }
 
 .header__title > div:first-of-type {
-  border-top: .45rem solid var(--gold);
+  border-top: 0.45rem solid var(--gold);
   padding-top: 40px;
-
 }
 
 .header__title p {
   color: var(--gold);
   margin-bottom: 80px;
   padding-top: 20px;
-  border-top: .45rem solid var(--gold);
-  letter-spacing: .45em;
+  border-top: 0.45rem solid var(--gold);
+  letter-spacing: 0.45em;
   line-height: 1;
   font-weight: 300;
   font-size: 3.842em;
@@ -131,49 +135,73 @@ button {
   text-transform: uppercase;
 }
 
-.header__title button, .header__title a {
- background-color: var(--gold);
- border: none;
- padding: 20px 35px;
- cursor: pointer;
- text-transform: uppercase;
- font-weight: 900;
- font-size: .714em;
- letter-spacing: 2px;
- position: relative;
- transition: all .2s ease-out;
- display: inline-block;
- color: hsla(0, 0%, 0%, .8);
- text-decoration: none;
+.header__title button,
+.header__title a {
+  background-color: var(--gold);
+  border: none;
+  padding: 20px 35px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.714em;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.2s ease-out;
+  display: inline-block;
+  color: hsla(0, 0%, 0%, 0.8);
+  text-decoration: none;
 }
 
-.header__title button::before, .header__title a::before {
-  content: '';
-  background-color: #F2CD5E1A;
+.header__title a.gremlinz_link {
+  margin-left: 10px;
+}
+
+.essentials_featured_button_wrap a {
+  background-color: var(--gold);
+  border: none;
+  padding: 20px 35px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.714em;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.2s ease-out;
+  display: inline-block;
+  color: hsla(0, 0%, 0%, 0.8);
+  text-decoration: none;
+}
+
+.header__title button::before,
+.header__title a::before {
+  content: "";
+  background-color: #f2cd5e1a;
   position: absolute;
   left: 10px;
   top: 10px;
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 }
 
-.header__title button > span, .header__title a > span {
+.header__title button > span,
+.header__title a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;
 }
 
-.header__title button:hover, .header__title a:hover {
+.header__title button:hover,
+.header__title a:hover {
   transform: translateY(-4px);
   color: var(--lightWhite);
 }
 
-.header__title button:hover::before, .header__title a:hover::before {
+.header__title button:hover::before,
+.header__title a:hover::before {
   transform: translate3d(-10px, -10px, 0);
 }
-
 
 .background {
   position: absolute;
@@ -185,7 +213,7 @@ button {
 }
 
 .background::before {
-  content: '';
+  content: "";
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -224,9 +252,9 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   position: absolute;
   top: -25px;
   right: 0;
@@ -234,16 +262,16 @@ button {
 
 .featured a {
   margin-bottom: 5px;
-  color: hsla(0, 0%, 0%, .8);
+  color: hsla(0, 0%, 0%, 0.8);
   background-color: var(--gold);
   text-decoration: none;
   padding: 20px 35px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .featured a > span {
@@ -257,8 +285,6 @@ button {
   margin: 0;
 }
 
-
-
 /* below is main ----------------------------------------------------------------------------=-=---- */
 
 main {
@@ -270,12 +296,12 @@ main {
   padding: 160px var(--col);
 }
 
-.essentials__item {
+/* .essentials__item {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .essentials__detials {
   display: flex;
@@ -296,9 +322,50 @@ main {
 .essentials__item.intro {
   max-width: 30%;
   width: 30%;
+  min-height: 260px;
+  display: flex;
 }
 
-.essentials__item.intro, .culture__info, .designer__info {
+.essentials__item_featured {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.essentials_featured_background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/Hoodie_front.jpg");
+  background-position-y: 20%;
+  background-position-x: center;
+  background-size: 100%;
+}
+
+.essentials_featured_button_wrap {
+  background-color: rgba(25, 25, 25, 0.4);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.essentials_featured_button_wrap > button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 2.25rem;
+}
+
+.essentials__item.intro,
+.culture__info,
+.designer__info {
   justify-content: center;
   align-items: center;
   position: relative;
@@ -308,18 +375,22 @@ main {
   margin-right: 80px;
 }
 
-.essentials__item.intro em, .culture__info em, .designer__info em {
+.essentials__item.intro em,
+.culture__info em,
+.designer__info em {
   position: absolute;
   top: 40px;
   left: 40px;
   color: var(--gold);
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .35em;
-  font-size: .714em;
+  letter-spacing: 0.35em;
+  font-size: 0.714em;
 }
 
-.essentials__item.intro h2, .culture__info h2, .designer__info h2 {
+.essentials__item.intro h2,
+.culture__info h2,
+.designer__info h2 {
   font-size: 2.744em;
   color: var(--white);
   font-weight: 900;
@@ -327,7 +398,12 @@ main {
   margin-bottom: 0;
 }
 
-.essentials__item.intro button, .culture__info button, .designer__info button, .essentials__item.intro a, .culture__info a, .designer__info a {
+.essentials__item.intro button,
+.culture__info button,
+.designer__info button,
+.essentials__item.intro a,
+.culture__info a,
+.designer__info a {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -337,25 +413,28 @@ main {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
   text-decoration: none;
-  color: hsla(0, 0%, 0%, .8);
-  transition: all .2s ease-out;
+  color: hsla(0, 0%, 0%, 0.8);
+  transition: all 0.2s ease-out;
 }
 
-.essentials__item.intro button > span, .essentials__item.intro a > span {
+.essentials__item.intro button > span,
+.essentials__item.intro a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;
 }
 
-.essentials__item.intro button:hover, .culture__info button:hover, .designer__info button:hover, .essentials__item.intro a:hover, .culture__info a:hover, .designer__info a:hover {
+.essentials__item.intro button:hover,
+.culture__info button:hover,
+.designer__info button:hover,
+.essentials__item.intro a:hover,
+.culture__info a:hover,
+.designer__info a:hover {
   color: var(--lightWhite);
 }
-
-
-
 
 /* culture section ----------------------------------------------------------------------------- */
 
@@ -371,14 +450,14 @@ main {
 
 p.culture__more {
   font-size: 1.4em;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   margin-bottom: 0;
   margin-top: 40px;
   background-color: #fafafa;
 }
 
 .culture__more a {
-  color: #84754E;
+  color: #84754e;
 }
 
 .culture__header {
@@ -401,7 +480,8 @@ p.culture__more {
   margin-bottom: 0;
 } */
 
-.culture__left, .culture__right {
+.culture__left,
+.culture__right {
   max-width: 50%;
 }
 
@@ -421,13 +501,14 @@ p.culture__more {
   display: flex;
 }
 
-.culture__info button > span, .designer__info button > span, .culture__info a > span, .designer__info a > span {
+.culture__info button > span,
+.designer__info button > span,
+.culture__info a > span,
+.designer__info a > span {
   position: relative;
   margin-left: 40px;
   bottom: 2px;
 }
-
-
 
 /* designer info section ------------------------------------------------------------------------ */
 
@@ -448,8 +529,6 @@ p.culture__more {
   min-height: none;
   max-width: 38%;
 }
-
-
 
 /* caller section ------------------------------------------------------------------------------- */
 
@@ -472,7 +551,7 @@ p.culture__more {
   font-size: 2.744em;
   font-weight: 900;
   letter-spacing: -1px;
-/* color: #FFF6F6; */
+  /* color: #FFF6F6; */
   color: black;
 }
 
@@ -483,15 +562,15 @@ p.culture__more {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
-  transition: all .2s ease-out;
-  color: #FFF6F6;
+  transition: all 0.2s ease-out;
+  color: #fff6f6;
 }
 
 #caller input {
   padding: 15px 35px;
-  border: 4px solid hsla(0, 0%, 0%, .8);
+  border: 4px solid hsla(0, 0%, 0%, 0.8);
   margin-right: 20px;
 }
 
@@ -516,9 +595,9 @@ p.culture__more {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   color: var(--lightWhite);
 }
 
@@ -555,10 +634,10 @@ p.culture__more {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
-  transition: all .2s ease-out;
-  color: #FFF6F6;
+  transition: all 0.2s ease-out;
+  color: #fff6f6;
 }
 
 .mc-field-group {
@@ -606,7 +685,7 @@ p.culture__more {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,.1)
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .productCaller__title button {
@@ -616,14 +695,14 @@ p.culture__more {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
   position: relative;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   display: inline-block;
-  color: hsla(0, 0%, 0%, .8);
+  color: hsla(0, 0%, 0%, 0.8);
   text-decoration: none;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .productCaller__title button > span {
@@ -642,11 +721,11 @@ p.culture__more {
   height: 100%;
   background-size: cover;
   background-position: center center;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .productCaller > a:hover .productCaller__back {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .productCaller > a:hover button {
@@ -663,21 +742,20 @@ p.culture__more {
   color: #fff;
   font-weight: 900;
   letter-spacing: -1px;
-  font-family: 'Big Caslon', Helvetica, Arial, sans-serif;
+  font-family: "Big Caslon", Helvetica, Arial, sans-serif;
   line-height: initial;
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 }
 
 .productCaller a:nth-of-type(1) .productCaller__back {
-  background-image: url('../assets/hat1-comp.jpg');
+  background-image: url("../assets/hat1-comp.jpg");
 }
 
 .productCaller a:nth-of-type(2) .productCaller__back {
-  background-image: url('../assets/loopHat.jpg');
+  background-image: url("../assets/loopHat.jpg");
 }
 
-
-@keyframes slide{
+@keyframes slide {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -694,9 +772,8 @@ p.culture__more {
   }
 }
 
-
 @media screen and (max-width: 1366px) {
-/*Header*/
+  /*Header*/
   .sideBar {
     width: 60px;
   }
@@ -706,7 +783,7 @@ p.culture__more {
   .sideBar__btn button {
     padding: 10px;
   }
-/* main */
+  /* main */
   body {
     font-size: 13px;
   }
@@ -734,11 +811,19 @@ p.culture__more {
     max-width: 38%;
     width: 38%;
   }
-  .essentials__item.intro h2, .culture__info h2, .designer__info h2, #catalog_caller h2, #caller h2 {
+  .essentials__item.intro h2,
+  .culture__info h2,
+  .designer__info h2,
+  #catalog_caller h2,
+  #caller h2 {
     font-size: 1.96em;
     letter-spacing: -1px;
   }
-  #essentials, #catalog_caller, #designer, #culture, #caller {
+  #essentials,
+  #catalog_caller,
+  #designer,
+  #culture,
+  #caller {
     padding-left: calc(var(--col) / 2);
     padding-right: calc(var(--col) / 2 + 60px);
   }
@@ -850,7 +935,8 @@ p.culture__more {
     height: 1000px;
     margin-top: 0;
   }
-  .productCaller > a:nth-child(1), .productCaller > a:nth-child(2) {
+  .productCaller > a:nth-child(1),
+  .productCaller > a:nth-child(2) {
     width: 100%;
     margin: 0;
   }
@@ -928,15 +1014,15 @@ p.culture__more {
   .header__title p {
     margin-bottom: 40px;
     font-size: 1.96em;
-    border-top: .35rem solid #84754E;
-    padding-top: .2em;
+    border-top: 0.35rem solid #84754e;
+    padding-top: 0.2em;
   }
   .header__title > div:first-of-type {
     padding-top: 1.25rem;
-    border-top: .35rem solid #84754E;
+    border-top: 0.35rem solid #84754e;
   }
   .header__title h1 span {
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
   .footer__links {
     padding: 80px 20px;
@@ -990,7 +1076,7 @@ p.culture__more {
     justify-content: flex-end;
     height: 100%;
   }
-  
+
   .menu ul {
     margin: 0;
     width: 100%;
@@ -1034,7 +1120,8 @@ p.culture__more {
     text-align: center;
     font-size: 1.96em;
   }
-  .culture__left, .culture__right {
+  .culture__left,
+  .culture__right {
     max-width: none;
     width: 100%;
     margin: 0;
@@ -1081,7 +1168,11 @@ p.culture__more {
   .header__title h1 {
     font-size: 3.842em;
   }
-  .essentials__item.intro h2, .culture__info h2, .designer__info h2, #catalog_caller h2, #caller h2 {
+  .essentials__item.intro h2,
+  .culture__info h2,
+  .designer__info h2,
+  #catalog_caller h2,
+  #caller h2 {
     font-size: 1.4em;
     letter-spacing: 0;
   }

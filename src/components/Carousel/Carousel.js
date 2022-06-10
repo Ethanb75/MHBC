@@ -1,57 +1,71 @@
-import React, { Component } from 'react';
-import './Carousel.css';
+import React, { Component } from "react";
+import "./Carousel.css";
 
-import cover1 from '../../assets/hat4-comp-wide.jpg';
-import cover2 from '../../assets/hats-comp-wide.jpg';
-import cover3 from '../../assets/hat2-comp-wide.jpg';
+import cover1 from "../../assets/hat4-comp-wide.jpg";
+import cover2 from "../../assets/hats-comp-wide.jpg";
+import cover3 from "../../assets/hat2-comp-wide.jpg";
 
 let timeout;
 const CAROUSEL_TIMER = 8000;
 
-
 export default class Carousel extends Component {
   state = {
     currentSlide: 0,
-    imageList: [cover1, cover2, cover3]
-  }
+    imageList: [cover1, cover2, cover3],
+  };
 
   selectImage(currentSlide) {
     // clear current interval so interval doesn't trigger after a selection
     clearInterval(timeout);
 
     //set currentSlide to new index
-    this.setState({ currentSlide })
+    this.setState({ currentSlide });
 
     // reset the timeout
     timeout = setInterval(() => {
       this.setState({
-        currentSlide: this.state.currentSlide === this.state.imageList.length - 1 ? 0 : this.state.currentSlide + 1
-      })
-    }, CAROUSEL_TIMER)
+        currentSlide:
+          this.state.currentSlide === this.state.imageList.length - 1
+            ? 0
+            : this.state.currentSlide + 1,
+      });
+    }, CAROUSEL_TIMER);
   }
 
   nextImage() {
     clearInterval(timeout);
     this.setState({
-      currentSlide: this.state.currentSlide === this.state.imageList.length - 1 ? 0 : this.state.currentSlide + 1
-    })
+      currentSlide:
+        this.state.currentSlide === this.state.imageList.length - 1
+          ? 0
+          : this.state.currentSlide + 1,
+    });
     timeout = setInterval(() => {
       this.setState({
-        currentSlide: this.state.currentSlide === this.state.imageList.length - 1 ? 0 : this.state.currentSlide + 1
-      })
-    }, CAROUSEL_TIMER)
+        currentSlide:
+          this.state.currentSlide === this.state.imageList.length - 1
+            ? 0
+            : this.state.currentSlide + 1,
+      });
+    }, CAROUSEL_TIMER);
   }
 
   previousImage() {
     clearInterval(timeout);
     this.setState({
-      currentSlide: this.state.currentSlide === 0 ? this.state.imageList.length - 1 : this.state.currentSlide - 1
-    })
+      currentSlide:
+        this.state.currentSlide === 0
+          ? this.state.imageList.length - 1
+          : this.state.currentSlide - 1,
+    });
     timeout = setInterval(() => {
       this.setState({
-        currentSlide: this.state.currentSlide === this.state.imageList.length - 1 ? 0 : this.state.currentSlide + 1
-      })
-    }, CAROUSEL_TIMER)
+        currentSlide:
+          this.state.currentSlide === this.state.imageList.length - 1
+            ? 0
+            : this.state.currentSlide + 1,
+      });
+    }, CAROUSEL_TIMER);
   }
 
   componentDidMount() {
@@ -59,9 +73,12 @@ export default class Carousel extends Component {
     if (!timeout) {
       timeout = setInterval(() => {
         this.setState({
-          currentSlide: this.state.currentSlide === this.state.imageList.length - 1 ? 0 : this.state.currentSlide + 1
-        })
-      }, CAROUSEL_TIMER)
+          currentSlide:
+            this.state.currentSlide === this.state.imageList.length - 1
+              ? 0
+              : this.state.currentSlide + 1,
+        });
+      }, CAROUSEL_TIMER);
     }
 
     this.nextImage = this.nextImage.bind(this);
@@ -82,7 +99,7 @@ export default class Carousel extends Component {
           style={currentSlide === index ? { opacity: 1 } : {}}
           alt=""
         />
-      )
+      );
     });
 
     let productImageSelectButtons = imageList.map((image, index) => {
@@ -90,10 +107,14 @@ export default class Carousel extends Component {
         <button
           key={image.id}
           onClick={() => this.selectImage(index)}
-          style={currentSlide === index ? { backgroundColor: '#84754E', transform: 'scale(1.2)' } : {}}
-        ></button>
-      )
-    })
+          style={
+            currentSlide === index
+              ? { backgroundColor: "#84754E", transform: "scale(1.2)" }
+              : {}
+          }
+        />
+      );
+    });
 
     return (
       <div className="carouselWrap">
@@ -110,6 +131,6 @@ export default class Carousel extends Component {
           {productImageSelectButtons}
         </div>
       </div>
-    )
+    );
   }
 }
