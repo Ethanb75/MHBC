@@ -2,7 +2,7 @@
   --col: calc(100vw / 8);
   --white: #fff;
   --black: #000;
-  --gold: #84754E;
+  --gold: #84754e;
 }
 
 .productView {
@@ -34,26 +34,28 @@
   left: 80px;
 }
 
-.productView__details h2, .productView__mobileDesc h2 {
+.productView__details h2,
+.productView__mobileDesc h2 {
   font-size: 3.842em;
   font-weight: 900;
   letter-spacing: -1px;
   margin-bottom: 20px;
   text-transform: uppercase;
   color: white;
-  line-height: .9;
+  line-height: 0.9;
 }
 
-.productView__details p, .productView__mobileDesc p {
+.productView__details p,
+.productView__mobileDesc p {
   /* max-width: 360px; */
   margin-bottom: 3rem;
   font-size: 1em;
   letter-spacing: 1px;
-  color: #7F7E7E;
+  color: #7f7e7e;
 }
 
 .productView__select {
-  width: 480px;
+  width: 485px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -82,6 +84,14 @@
   width: 100%;
 }
 
+.sizeOptionWrapper {
+  margin-bottom: 3rem;
+}
+
+.sizeOptionWrapper p {
+  margin-bottom: 10px;
+}
+
 .productView__select button {
   background-color: var(--gold);
   border: none;
@@ -89,24 +99,34 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .714em;
+  font-size: 0.714em;
   letter-spacing: 2px;
   position: relative;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   transform: scale(1) translateY(0);
   width: 100%;
   overflow: hidden;
 }
 
+.productView__select button.sizeOption {
+  width: auto;
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+
+/* FIX ME, add class */
 .productView__select button::after {
-  content: 'Added To Cart';
+  content: "Added To Cart";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: white;
   color: var(--gold);
   z-index: 10;
@@ -117,6 +137,13 @@
 
 .productView__select button:hover {
   background: black;
+  color: var(--gold);
+}
+
+.productView__select button.sizeOption:hover,
+.productView__select button.sizeOption.isSelectedSize {
+  background: #fff;
+  border-color: #fff;
   color: var(--gold);
 }
 
@@ -159,17 +186,17 @@
   width: 2rem;
   height: 2rem;
   background-color: #000;
-  padding: .1rem;
+  padding: 0.1rem;
   margin-right: 1rem;
   border: 2px solid #e7e7e7;
   cursor: pointer;
 }
 .colorSelect__color > span {
-    position: absolute;
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    height: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
 }
 
 .colorSelect[type="radio"]:checked + .colorSelect__color {
@@ -177,7 +204,6 @@
   /* transform: scale(110%); */
   background-color: white;
 }
-
 
 /* product images --------------------------------------- */
 .productImageControls {
@@ -196,12 +222,12 @@
   border: none;
   cursor: pointer;
   padding: 15px 35px;
-  line-height: .8;
-  transition: all .2s ease-in-out;
+  line-height: 0.8;
+  transition: all 0.2s ease-in-out;
 }
 
 .productImageControls button:last-of-type {
-  border-left: 1px solid #68572D;
+  border-left: 1px solid #68572d;
 }
 
 .productImageControls button:hover {
@@ -235,8 +261,6 @@
   letter-spacing: 1px;
   color: #000;
 }
-
-
 
 @media screen and (max-width: 1366px) {
   .productView__select {
@@ -335,7 +359,8 @@
     left: 10px;
     top: 80px;
   }
-  .productView__details p, .productView__details h2 {
+  .productView__details p,
+  .productView__details h2 {
     margin-bottom: 20px;
   }
   .productImageControls {
@@ -348,7 +373,8 @@
   .productView__details {
     width: 100%;
   }
-  .productView__details h2, .productView__mobileDesc h2 {
+  .productView__details h2,
+  .productView__mobileDesc h2 {
     font-size: 2.744em;
   }
 }

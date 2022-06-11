@@ -79,13 +79,25 @@ class TemplateWrapper extends Component {
     });
   }
 
-  addVariantToCart(variantId, quantity) {
+  addVariantToCart(variantId, quantity, sizeOption) {
     // possibly not needed
     this.setState({
       isCartOpen: true,
     });
 
-    const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }];
+    const size = sizeOption
+      ? {
+          customAttributes: [{ key: "Size", value: sizeOption }],
+        }
+      : {};
+
+    const lineItemsToAdd = [
+      {
+        variantId,
+        quantity: parseInt(quantity, 10),
+        ...size,
+      },
+    ];
     const checkoutId = this.state.checkout.id;
 
     client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res) => {

@@ -10,6 +10,8 @@ import "./ProductView.css";
 
 const mockProduct =
   "https://cdn.shopify.com/s/files/1/0141/0855/7370/files/mockProduct.jpeg?2414997021602847072";
+
+const SIZE_OPTIONS_NAME = "Size";
 let animTimer;
 
 function animateButton(timestamp) {
@@ -29,11 +31,36 @@ function animateButton(timestamp) {
   }
 }
 
+const SizeOptions = ({ options, currentOption, handleSizeOptionChange }) => {
+  return (
+    <div className="sizeOptionWrapper">
+      <p>Size</p>
+      {options.map((option) => {
+        const { value } = option;
+        const isSelectedSize = currentOption === value;
+        return (
+          <button
+            className={
+              isSelectedSize ? "sizeOption isSelectedSize" : "sizeOption"
+            }
+            type="button"
+            onClick={() => handleSizeOptionChange(value)}
+          >
+            {value}
+          </button>
+        );
+      })}
+    </div>
+  );
+};
+
 export default class ProductView extends Component {
   state = {
     currentProductImage: 0,
     product: undefined,
     productImageLoaded: {},
+    sizeOptions: [],
+    selectedSize: "",
   };
 
   componentDidMount() {
@@ -59,9 +86,21 @@ export default class ProductView extends Component {
       this.props.client.product
         .fetch(this.props.pathContext.id.replace("Shopify__Product__", ""))
         .then((product) => {
-          this.setState({
-            product,
-          });
+          const sizeOptionsObject = product.options.find(
+            (option) => option.name === SIZE_OPTIONS_NAME
+          );
+          if (sizeOptionsObject) {
+            const { values: sizeOptions } = sizeOptionsObject;
+            this.setState({
+              product,
+              sizeOptions,
+              selectedSize: sizeOptions[0].value,
+            });
+          } else {
+            this.setState({
+              product,
+            });
+          }
         });
     }
 
@@ -112,6 +151,22 @@ export default class ProductView extends Component {
     });
   }
 
+  handleSizeOptionChange(selectedSize) {
+    const selectedOptions = {
+      Size: selectedSize,
+    };
+
+    const selectedVariant = this.props.client.product.helpers.variantForOptions(
+      this.state.product,
+      selectedOptions
+    );
+
+    this.setState({
+      selectedSize,
+      selectedVariant,
+    });
+  }
+
   previousImage() {
     const { currentProductImage } = this.state;
 
@@ -140,9 +195,9 @@ export default class ProductView extends Component {
     });
   }
   render() {
-    const { currentProductImage } = this.state;
+    const { currentProductImage, sizeOptions, selectedSize } = this.state;
+    const hasSizeOptions = sizeOptions.length > 0;
     if (this.state.product) {
-      // console.log(this.state.product)
       let show360Button = this.state.product.tags.map((tag) => {
         // if one of the tags are '360 view' then return a tag
         if (tag.value === "360 view") {
@@ -175,9 +230,11 @@ export default class ProductView extends Component {
         );
       });
 
-      console.log("variant", variant);
-      console.log("product", this.state.product);
-      console.log("selected variant", this.state.selectedVariant);
+      // console.log("variant", variant);
+      // console.log("product", this.state.product);
+      // console.log("product options", sizeOptions);
+      // console.log("selectedSize", selectedSize);
+      // console.log("selected variant", this.state.selectedVariant);
 
       let productImageSelectButtons = this.state.product.images.map(
         (image, index) => {
@@ -215,6 +272,15 @@ export default class ProductView extends Component {
             <div className="productView__mobileDesc">
               <h2>{this.state.product.title}</h2>
               <p>{this.state.product.description}</p>
+              {hasSizeOptions ? (
+                <SizeOptions
+                  options={sizeOptions}
+                  handleSizeOptionChange={(val) =>
+                    this.handleSizeOptionChange(val)
+                  }
+                  currentOption={selectedSize}
+                />
+              ) : null}
               {variantSelectors}
               <span>${variant.price}</span>
             </div>
@@ -223,7 +289,11 @@ export default class ProductView extends Component {
                 onClick={(ev) => {
                   let start;
                   console.log("add to cart", variant.id, variantQuantity);
-                  this.props.addVariantToCart(variant.id, variantQuantity);
+                  this.props.addVariantToCart(
+                    variant.id,
+                    variantQuantity,
+                    selectedSize
+                  );
                   window.requestAnimationFrame(animateButton, start, ev.target);
                   setTimeout(() => {
                     this.props.handleCartClose();
