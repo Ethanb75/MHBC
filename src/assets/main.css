@@ -655,7 +655,7 @@ p.culture__more {
   position: relative;
   padding-right: 80px;
   height: 400px;
-  margin-top: 160px;
+  /* margin-top: 160px; */
 }
 
 .productCaller > a {
