@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react";
+import Link from "gatsby-link";
 
-import './Footer.css';
+import "./Footer.css";
 
 const Footer = () => (
   <footer id="footer">
@@ -16,9 +16,7 @@ const Footer = () => (
           </a>
         </p>
         <p>
-          <a href="+1111111111">
-            (678) 633 - 1111
-          </a>
+          <a href="tel:+4049016888">(404) 901 - 6888</a>
         </p>
         <div>
           <span>
