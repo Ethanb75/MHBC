@@ -176,7 +176,7 @@ export default class IndexPage extends Component {
             </div>
           </div>
 
-          <div id="culture">
+          {/* <div id="culture">
             <div>
               <div className="culture__header">@milehigh_boysclub</div>
               <div className="culture__left">
@@ -205,7 +205,7 @@ export default class IndexPage extends Component {
                 Instagram.
               </a>
             </p>
-          </div>
+          </div> */}
 
           <div className="productCaller">
             <Link to="/en/Catalog">
