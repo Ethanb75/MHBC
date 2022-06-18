@@ -40,6 +40,18 @@
         "Orange": { "color": "Orange", "hex": "#e18f54" },
         "White": { "color": "White", "hex": "#dae6e8" }
       }
+    },
+    "Savage Tee": {
+      "variants": {
+        "Black": { "color": "Black", "hex": "#141414" },
+        "White": { "color": "White", "hex": "#dae6e8" }
+      }
+    },
+    "Mischievous Tee": {
+      "variants": {
+        "Black": { "color": "Black", "hex": "#141414" },
+        "White": { "color": "White", "hex": "#dae6e8" }
+      }
     }
   }
 }
