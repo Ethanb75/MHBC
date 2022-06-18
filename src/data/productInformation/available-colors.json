@@ -1,33 +1,45 @@
 {
-    "products": {
-        "Hats": {
-            "Flight Line Hat": {
-                "variants": {
-                    "Black": {"color": "Black", "hex": "#141414"},
-                    "Blue": {"color": "Blue", "hex": "#9dd2ff"},
-                    "Red": {"color": "Red", "hex": "#d96064"},
-                    "White": {"color": "White", "hex": "#dae6e8"},
-                    "Black Camo": {"color": "Black", "hex": "#141414"},
-                    "Red Camo": {"color": "Red", "hex": "#d96064"},
-                    "Orange Camo": {"color": "Orange", "hex": "#e18f54"}
-                }
-            },
-            "Flight Line Beanie": {
-                "variants": {
-                    "Black": {"color": "Black", "hex": "#141414"},
-                    "Blue": {"color": "Blue", "hex": "#9dd2ff"},
-                    "Red": {"color": "Red", "hex": "#d96064"},
-                    "Yellow": {"color": "Yellow", "hex": "#f2ff88"},
-                    "Gray": {"color": "Gray", "hex": "#eee"}
-                }
-            },
-            "Flight Line Hat Camo": {
-                "variants": {
-                    "Black Camo": {"color": "Black", "hex": "#141414"},
-                    "Red Camo": {"color": "Red", "hex": "#d96064"},
-                    "Orange Camo": {"color": "Orange", "hex": "#e18f54"}
-                }
-            }
-        }
+  "products": {
+    "Flight Line Hat": {
+      "variants": {
+        "Black": { "color": "Black", "hex": "#141414" },
+        "Blue": { "color": "Blue", "hex": "#9dd2ff" },
+        "Red": { "color": "Red", "hex": "#d96064" },
+        "White": { "color": "White", "hex": "#dae6e8" },
+        "Black Camo": { "color": "Black", "hex": "#141414" },
+        "Red Camo": { "color": "Red", "hex": "#d96064" },
+        "Orange Camo": { "color": "Orange", "hex": "#e18f54" }
+      }
+    },
+    "Flight Line Beanie": {
+      "variants": {
+        "Black": { "color": "Black", "hex": "#141414" },
+        "Blue": { "color": "Blue", "hex": "#9dd2ff" },
+        "Red": { "color": "Red", "hex": "#d96064" },
+        "Yellow": { "color": "Yellow", "hex": "#f2ff88" },
+        "Gray": { "color": "Gray", "hex": "#eee" }
+      }
+    },
+    "Flight Line Hat Camo": {
+      "variants": {
+        "Black Camo": { "color": "Black", "hex": "#141414" },
+        "Red Camo": { "color": "Red", "hex": "#d96064" },
+        "Orange Camo": { "color": "Orange", "hex": "#e18f54" }
+      }
+    },
+    "TRU5T TH3 PROC355 Hoodie": {
+      "variants": {
+        "Blue": { "color": "Blue", "hex": "#9dd2ff" },
+        "Red": { "color": "Red", "hex": "#d96064" },
+        "White": { "color": "White", "hex": "#dae6e8" }
+      }
+    },
+    "Plane Tail Crew Neck Sweater": {
+      "variants": {
+        "Blue": { "color": "Blue", "hex": "#9dd2ff" },
+        "Orange": { "color": "Orange", "hex": "#e18f54" },
+        "White": { "color": "White", "hex": "#dae6e8" }
+      }
     }
+  }
 }
