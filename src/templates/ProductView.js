@@ -131,8 +131,14 @@ export default class ProductView extends Component {
 
   handleOptionChange(event) {
     const target = event.target;
+    const { sizeOptions, selectedSize } = this.state;
+    const hasSizeOptions = sizeOptions.length > 0;
     let selectedOptions = this.state.selectedOptions;
     selectedOptions[target.name] = target.value;
+
+    if (hasSizeOptions) {
+      selectedOptions.Size = selectedSize;
+    }
 
     const selectedVariant = this.props.client.product.helpers.variantForOptions(
       this.state.product,
