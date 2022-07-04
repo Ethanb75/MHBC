@@ -52,6 +52,12 @@
         "Black": { "color": "Black", "hex": "#141414" },
         "White": { "color": "White", "hex": "#dae6e8" }
       }
+    },
+    "Night Night Hoodie": {
+      "variants": {
+        "Black": { "color": "Black", "hex": "#141414" },
+        "Gold": { "color": "Gold", "hex": "#f2ff88" }
+      }
     }
   }
 }
