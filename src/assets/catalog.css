@@ -23,19 +23,31 @@
 .catalogHeader__text {
   /* padding-left: 60px; */
   position: absolute;
-  bottom: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.catalogHeader__text h1 {
-  /* font-size: 7.53em; */
-  font-size: 3.375em;
-  font-weight: 900;
-  margin: 0;
-  color: #0d0d0d;
-  text-transform: uppercase;
-  flex-grow: 1;
+.catalogHeaderContent > img {
+  margin-bottom: 0;
+}
+
+.catalogHeader__text > img {
+  width: 62%;
+}
+
+.catalogHeaderContent__filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.62;
 }
 
 .catalogHeader__text p {
@@ -231,6 +243,14 @@
     text-align: center;
     position: relative;
   }
+  .kodak .catalogHeader__text {
+    position: absolute;
+    text-align: initial;
+    padding: 0;
+  }
+  .catalogHeader__text > img {
+    width: 85%;
+  }
   .catalogCategory {
     padding-right: 60px;
     padding-left: 0;
@@ -278,6 +298,7 @@
     /* padding: 60px 20px 20px 20px; */
     padding: 20px 20px 40px 20px;
   }
+
   /* .catalogCategory h2 {
     padding-bottom: 0;
     text-align: center

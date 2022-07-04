@@ -394,7 +394,7 @@ main {
   font-size: 2.744em;
   color: var(--white);
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.25px;
   margin-bottom: 0;
 }
 
@@ -550,7 +550,7 @@ p.culture__more {
   margin: 0;
   font-size: 2.744em;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.25px;
   /* color: #FFF6F6; */
   color: black;
 }
@@ -611,7 +611,7 @@ p.culture__more {
   margin: 0;
   font-size: 2.744em;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.25px;
   color: black;
 }
 
@@ -741,7 +741,7 @@ p.culture__more {
   font-size: 5.378em;
   color: #fff;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.25px;
   font-family: "Big Caslon", Helvetica, Arial, sans-serif;
   line-height: initial;
   transition: all 0.1s ease;

@@ -8,10 +8,9 @@ import Footer from "../../components/Footer/Footer";
 
 import "semantic-ui-css/semantic.min.css";
 import "../../assets/catalog.css";
-import logo1 from "../../assets/gremlinz_logo1_50.jpg";
-
-// example:
-// activeFilters = ['home collection', '']
+import GremlinzBackWide from "../../assets/Gremlinz/Gremlinz_back2.jpg";
+import GremlinzBackSmall from "../../assets/Gremlinz/Gremlinz_back_small1.jpg";
+import GremlinzLogo from "../../assets/Gremlinz/Gremlinz-White-Transp.png";
 
 export default class Apparel extends Component {
   state = {
@@ -25,6 +24,13 @@ export default class Apparel extends Component {
     const newIndex = activeFilterIndex === index ? -1 : index;
 
     this.setState({ activeFilterIndex: newIndex });
+  };
+
+  getHeaderImage = () => {
+    if (window && window.screen.width < 600) {
+      return GremlinzBackSmall;
+    }
+    return GremlinzBackWide;
   };
 
   filterProductsByType(productType) {
@@ -88,7 +94,7 @@ export default class Apparel extends Component {
 
     const { activeFilterIndex } = this.state;
     return (
-      <div>
+      <div className="kodak">
         <Helmet
           title="Mile High Boys Club | Catalog | Kodak"
           meta={[
@@ -107,10 +113,12 @@ export default class Apparel extends Component {
           <div>
             {/* <Carousel /> */}
             <div className="catalogHeaderContent">
-              <img src={logo1} alt="" />
+              <img src={this.getHeaderImage()} alt="" />
+              <div className="catalogHeaderContent__filter" />
             </div>
             <div className="catalogHeader__text">
-              <h1>Kodak Gremlinz Collection</h1>
+              {/* <h1>Kodak Gremlinz Collection</h1> */}
+              <img src={GremlinzLogo} alt="" />
             </div>
           </div>
         </header>
