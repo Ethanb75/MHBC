@@ -32,6 +32,17 @@
   align-items: center;
 }
 
+.catalogHeader__textHeader > h1 {
+  /* font-size: 7.53em; */
+  font-size: 3.375em;
+  font-weight: 900;
+  margin: 0;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+
 .catalogHeaderContent > img {
   margin-bottom: 0;
 }
@@ -292,7 +303,8 @@
     bottom: -100px;
     width: 100%;
     text-align: center;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
+    margin-top: 20px;
   }
   .catalogCategory {
     /* padding: 60px 20px 20px 20px; */

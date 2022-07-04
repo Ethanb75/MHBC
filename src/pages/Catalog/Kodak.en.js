@@ -117,7 +117,6 @@ export default class Apparel extends Component {
               <div className="catalogHeaderContent__filter" />
             </div>
             <div className="catalogHeader__text">
-              {/* <h1>Kodak Gremlinz Collection</h1> */}
               <img src={GremlinzLogo} alt="" />
             </div>
           </div>

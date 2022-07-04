@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import { Accordion, Icon, Label } from 'semantic-ui-react';
-import Helmet from 'react-helmet'
+import React, { Component } from "react";
+import Link from "gatsby-link";
+import { Accordion, Icon, Label } from "semantic-ui-react";
+import Helmet from "react-helmet";
 
+import Products from "../../components/Products";
+import Footer from "../../components/Footer/Footer";
+import Carousel from "../../components/Carousel/Carousel";
 
-import Products from '../../components/Products';
-import Footer from '../../components/Footer/Footer';
-import Carousel from '../../components/Carousel/Carousel';
-
-import 'semantic-ui-css/semantic.min.css';
-import '../../assets/catalog.css';
-
+import "semantic-ui-css/semantic.min.css";
+import "../../assets/catalog.css";
 
 // example:
 // activeFilters = ['home collection', '']
@@ -18,26 +16,26 @@ import '../../assets/catalog.css';
 export default class Apparel extends Component {
   state = {
     filteredProducts: undefined,
-    noSearchResults: false
-  }
+    noSearchResults: false,
+  };
 
   handleFilterClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeFilterIndex } = this.state
-    const newIndex = activeFilterIndex === index ? -1 : index
+    const { index } = titleProps;
+    const { activeFilterIndex } = this.state;
+    const newIndex = activeFilterIndex === index ? -1 : index;
 
-    this.setState({ activeFilterIndex: newIndex })
-  }
+    this.setState({ activeFilterIndex: newIndex });
+  };
 
   filterProductsByType(productType) {
     let filtered = [];
     // add the loading css
-    this.props.client.product.fetchAll().then(products => {
+    this.props.client.product.fetchAll().then((products) => {
       // fetch all products and filter by productType
-      products.forEach(product => {
+      products.forEach((product) => {
         if (product.productType === productType) {
           filtered.push(product);
-        };
+        }
       });
 
       // if the length is greater than 0, add the products, else set noSearchResults to true
@@ -45,20 +43,22 @@ export default class Apparel extends Component {
         this.setState({ filteredProducts: filtered });
       } else {
         this.setState({
-          noSearchResults: true
+          noSearchResults: true,
         });
-      };
+      }
     });
   }
 
   componentDidMount() {
-    this.filterProductsByType('Apparel');
+    this.filterProductsByType("Apparel");
 
     // add different page style
-    document.querySelector('.footer__links').classList.add('catalog');
-    document.querySelector('.sideBar').classList.add('catalog');
-    document.querySelector('.sideBar__btn').classList.add('catalog');
-    document.querySelectorAll('li.topBar__link a').forEach(el => el.classList.add('catalog'));
+    document.querySelector(".footer__links").classList.add("catalog");
+    document.querySelector(".sideBar").classList.add("catalog");
+    document.querySelector(".sideBar__btn").classList.add("catalog");
+    document
+      .querySelectorAll("li.topBar__link a")
+      .forEach((el) => el.classList.add("catalog"));
 
     this.props.handleCartClose();
   }
@@ -66,16 +66,16 @@ export default class Apparel extends Component {
   render() {
     //find all the product types and filter to remove duplicates
     let productTypes = this.props.products
-      .map(product => {
+      .map((product) => {
         return product.productType;
       })
       .filter((val, index, self) => self.indexOf(val) === index)
-      .map(type => {
+      .map((type) => {
         return (
           <li key={type}>
             <Link to={`/en/Catalog/${type}`}>{type}</Link>
           </li>
-        )
+        );
       });
 
     // let collections = this.props.collections.map(collection => {
@@ -92,26 +92,37 @@ export default class Apparel extends Component {
         <Helmet
           title="Mile High Boys Club | Catalog | Apparel"
           meta={[
-            { name: 'description', content: 'Mile High Boys Club official website and merch store. Apparel Catalog Page.' },
-            { name: 'keywords', content: 'Mile High Boys Club, MHBC, MHBC Fashion, fashion' },
+            {
+              name: "description",
+              content:
+                "Mile High Boys Club official website and merch store. Apparel Catalog Page.",
+            },
+            {
+              name: "keywords",
+              content: "Mile High Boys Club, MHBC, MHBC Fashion, fashion",
+            },
           ]}
         />
         <header id="catalogHeader">
           <div>
             <Carousel />
-            <div className="catalogHeader__text">
-              <h1>Apparel</h1>
-            </div>
+          </div>
+          <div className="catalogHeader__textHeader">
+            <h1>Apparel</h1>
           </div>
         </header>
         <div className="catalogCategory">
           <h2>
             <span>
-              <Link to="/">Home</Link> &rarr; <Link to="/en/Catalog">Catalog</Link> &rarr; Apparel
+              <Link to="/">Home</Link> &rarr;{" "}
+              <Link to="/en/Catalog">Catalog</Link> &rarr; Apparel
             </span>
             <div>
-              {this.state.filteredProducts ? this.state.filteredProducts.length : 0} results
-              <span></span>
+              {this.state.filteredProducts
+                ? this.state.filteredProducts.length
+                : 0}{" "}
+              results
+              <span />
             </div>
           </h2>
         </div>
@@ -120,15 +131,17 @@ export default class Apparel extends Component {
           <div className="catalogFilter">
             <div className="filter">
               <Accordion>
-                <Accordion.Title active={activeFilterIndex === 1} index={1} onClick={this.handleFilterClick}>
+                <Accordion.Title
+                  active={activeFilterIndex === 1}
+                  index={1}
+                  onClick={this.handleFilterClick}
+                >
                   <label>Filter By</label>
-                  <Icon name='dropdown' />
+                  <Icon name="dropdown" />
                   {/* <span>Product Type</span> */}
                 </Accordion.Title>
                 <Accordion.Content active={activeFilterIndex === 1}>
-                  <ul>
-                    {productTypes}
-                  </ul>
+                  <ul>{productTypes}</ul>
                 </Accordion.Content>
               </Accordion>
             </div>
@@ -145,6 +158,6 @@ export default class Apparel extends Component {
 
         <Footer />
       </div>
-    )
+    );
   }
 }
