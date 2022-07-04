@@ -27,7 +27,7 @@ export default class Apparel extends Component {
   };
 
   getHeaderImage = () => {
-    if (window && window.screen.width < 600) {
+    if (typeof window !== "undefined" && window.screen.width < 600) {
       return GremlinzBackSmall;
     }
     return GremlinzBackWide;
