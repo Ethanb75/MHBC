@@ -817,7 +817,7 @@ p.culture__more {
   #catalog_caller h2,
   #caller h2 {
     font-size: 1.96em;
-    letter-spacing: -1px;
+    letter-spacing: -0.25px;
   }
   #essentials,
   #catalog_caller,
