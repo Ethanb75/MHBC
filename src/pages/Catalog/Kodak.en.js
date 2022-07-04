@@ -125,7 +125,8 @@ export default class Apparel extends Component {
           <h2>
             <span>
               <Link to="/">Home</Link> &rarr;{" "}
-              <Link to="/en/Catalog">Catalog</Link> &rarr; Kodak 2022
+              <Link to="/en/Catalog">Catalog</Link> &rarr; Gremlinz Collection
+              2022
             </span>
             <div>
               {this.state.filteredProducts
