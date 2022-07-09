@@ -8,7 +8,7 @@ import Footer from "../../components/Footer/Footer";
 
 import "semantic-ui-css/semantic.min.css";
 import "../../assets/catalog.css";
-import GremlinzBackWide from "../../assets/Gremlinz/back3.jpg";
+import GremlinzBackWide from "../../assets/Gremlinz/back4.jpg";
 import GremlinzBackSmall from "../../assets/Gremlinz/Gremlinz_back_small1.jpg";
 import GremlinzLogo from "../../assets/Gremlinz/Gremlinz-White-Transp.png";
 
