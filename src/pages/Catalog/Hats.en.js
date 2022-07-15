@@ -30,7 +30,7 @@ export default class Apparel extends Component {
   filterProductsByType(productType) {
     let filtered = [];
     // add the loading css
-    this.props.client.product.fetchAll().then((products) => {
+    this.props.client.product.fetchAll(30).then((products) => {
       // fetch all products and filter by productType
       products.forEach((product) => {
         if (product.productType === productType) {

@@ -60,13 +60,13 @@ class TemplateWrapper extends Component {
         .catch((err) => console.log(err));
     }
 
-    client.collection.fetchAll().then((collections) => {
+    client.collection.fetchAll(30).then((collections) => {
       this.setState({
         collections,
       });
     });
 
-    client.product.fetchAll().then((res) => {
+    client.product.fetchAll(30).then((res) => {
       this.setState({
         products: res,
       });
